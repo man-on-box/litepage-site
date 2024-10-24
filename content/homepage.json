@@ -2,7 +2,7 @@
   "title": "Litepage",
   "heading": "A minimalist, zero dependency static site generator",
   "subheading": "Litepage is a free, open source lightweight library to build your static sites, written in Go. Designed to simplify the web.",
-  "cta": [
+  "ctas": [
     {
       "label": "Get started",
       "url": "/docs",

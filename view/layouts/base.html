@@ -7,6 +7,25 @@
     <link rel="icon" type="image/svg+xml" href="/litepage.svg" />
     <link href="/main.css?v={{ version }}" rel="stylesheet" />
     <title>{{ template "title" . }}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://litepage.dev" />
+    <meta property="og:title" content='{{ template "title". }}' />
+    <meta
+      property="og:description"
+      content='{{ template "meta-description" . }}'
+    />
+    <meta property="og:image" content="https://litepage.dev/img/social.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://litepage.dev" />
+    <meta property="twitter:title" content='{{ template "title" . }}' />
+    <meta
+      property="twitter:description"
+      content='{{ template "meta-description" . }}'
+    />
+    <meta
+      property="twitter:image"
+      content="https://manonbox.io/img/social.png"
+    />
     {{ template "scripts" }}
   </head>
   <body class="antialiased bg-dark">

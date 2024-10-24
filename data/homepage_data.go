@@ -7,10 +7,11 @@ type ViewData struct {
 }
 
 type HomepageView struct {
-	Title      string    `json:"title"`
-	Heading    string    `json:"heading"`
-	Subheading string    `json:"subheading"`
-	Cta        []ctaItem `json:"cta"`
+	Title      string        `json:"title"`
+	Heading    string        `json:"heading"`
+	Subheading string        `json:"subheading"`
+	Ctas       []ctaItem     `json:"ctas"`
+	Taglines   []taglineItem `json:"taglines"`
 }
 
 type ctaItem struct {
@@ -18,6 +19,11 @@ type ctaItem struct {
 	Url      string `json:"url"`
 	Type     string `json:"type"`
 	External bool   `json:"external"`
+}
+
+type taglineItem struct {
+	Icon string `json:"icon"`
+	Text string `json:"text"`
 }
 
 func getHomepageView() HomepageView {
