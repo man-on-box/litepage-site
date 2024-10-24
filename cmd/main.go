@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/man-on-box/litepage"
+	"github.com/man-on-box/litepage-site/data"
 	"github.com/man-on-box/litepage-site/view"
 )
 
@@ -15,9 +16,10 @@ func main() {
 	}
 
 	vh := view.NewViewHandler()
+	d := data.New()
 
 	lp.Page("/index.html", func(w io.Writer) {
-		vh.Index.Render(w, nil)
+		vh.Index.Render(w, d.Homepage)
 	})
 
 	lp.BuildOrServe()

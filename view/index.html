@@ -1,6 +1,47 @@
-{{ define "scripts" }}{{end}} {{ define "title" }}Litepage{{ end }} {{ define
-"body" }}
-<div>
-  <h1 class="text-3xl">hi</h1>
+<!-- scripts -->
+{{ define "scripts" }}{{ end }}
+
+<!-- title -->
+{{ define "title" }}{{ .Data.Title }}{{ end }}
+
+<!-- body -->
+{{ define "body" }}
+<div class="max-w-6xl mx-auto px-4 sm:px-8">
+  {{ template "hero" .Data.Heading}}
+  <div
+    class="flex flex-col sm:flex-row gap-6 my-10 items-center justify-center"
+  >
+    {{ range .Data.Cta }}
+    <a
+      class='text-center py-2 px-10 border {{ if eq .Type "primary"}}border-pink bg-pink/65{{ else }}border-white{{ end }} rounded-lg text-white font-bold hover:scale-105 transition'
+      href="{{ .Url }}"
+      target="{{ if eq .External true}}_blank{{ else }}_self{{ end }}"
+    >
+      {{ .Label }}
+    </a>
+    {{ end }}
+  </div>
+  <h2 class="text-white text-center text-2xl max-w-[50ch] mx-auto my-20">
+    {{ .Data.Subheading}}
+  </h2>
+</div>
+{{ end }}
+
+<!-- hero -->
+{{ define "hero" }}
+<div class="flex mx-auto my-10 gap-14 text-white items-center justify-center">
+  <div class="shrink-0 py-10 md:py-20 hidden md:block">
+    {{ inlineSVG "public/litepage.svg" "w-auto h-36"}}
+  </div>
+  <div class="py-10 md:py-20 relative w-[38ch]">
+    <div
+      class="absolute -z-20 top-0 w-3/4 h-full rounded-full blur-3xl bg-gradient-to-r from-pink to-cyan opacity-35 rotate-6"
+    ></div>
+    <h1
+      class="text-4xl text-center leading-tight md:text-left font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
+    >
+      {{ . }}
+    </h1>
+  </div>
 </div>
 {{ end }}

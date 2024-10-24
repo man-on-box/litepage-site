@@ -1,0 +1,24 @@
+{
+  "title": "Litepage",
+  "heading": "A minimalist, zero dependency static site generator",
+  "subheading": "Litepage is a free, open source lightweight library to build your static sites, written in Go. Designed to simplify the web.",
+  "cta": [
+    {
+      "label": "Get started",
+      "url": "/docs",
+      "type": "primary",
+      "external": false
+    },
+    {
+      "label": "See on GitHub",
+      "url": "https://github.com/man-on-box/litepage",
+      "type": "secondary",
+      "external": true
+    }
+  ],
+  "taglines": [
+    { "icon": "cpu", "text": "Works with any static site hosting provider" },
+    { "icon": "puzzle", "text": "Easy integration with minimal footprint" },
+    { "icon": "zap", "text": "Contains zero additional dependencies" }
+  ]
+}

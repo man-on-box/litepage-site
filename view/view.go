@@ -4,8 +4,12 @@ import (
 	"html/template"
 	"io"
 	"log"
+	"os"
 	"path/filepath"
+	"strings"
 	"time"
+
+	"github.com/man-on-box/litepage-site/data"
 )
 
 type ViewHandler struct {
@@ -27,15 +31,16 @@ type view struct {
 	Template *template.Template
 }
 
-var tmplBase = template.New("").Funcs(template.FuncMap{
+var tmpl = template.New("").Funcs(template.FuncMap{
 	"version": func() string {
 		return time.Now().Format("01021504")
 	},
+	"inlineSVG": inlineSVG,
 })
 
 func newView(layout string, files ...string) *view {
 	files = append(layoutFiles(), files...)
-	t, err := tmplBase.ParseFiles(files...)
+	t, err := tmpl.ParseFiles(files...)
 	if err != nil {
 		log.Fatalf("error while parsing files: %v", err)
 	}
@@ -46,7 +51,7 @@ func newView(layout string, files ...string) *view {
 	}
 }
 
-func (v *view) Render(w io.Writer, data any) {
+func (v *view) Render(w io.Writer, data data.HomepageView) {
 	vd := viewData{
 		Data: data,
 	}
@@ -63,4 +68,19 @@ func layoutFiles() []string {
 		log.Fatal(err)
 	}
 	return files
+}
+
+func inlineSVG(filename string, className ...string) template.HTML {
+	content, err := os.ReadFile(filename)
+	if err != nil {
+		log.Fatalf("could not open svg %s: %v", filename, err)
+	}
+
+	svg := string(content)
+
+	if len(className) > 0 {
+		svg = strings.Replace(svg, "<svg", `<svg class="`+className[0]+`"`, 1)
+	}
+
+	return template.HTML(svg)
 }

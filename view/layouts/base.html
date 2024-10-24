@@ -9,8 +9,8 @@
     <title>{{ template "title" . }}</title>
     {{ template "scripts" }}
   </head>
-  <body>
-    {{ template "body" .}}
+  <body class="antialiased bg-dark">
+    {{ template "nav"}} {{ template "body" .}}
   </body>
 </html>
 {{ end }}
