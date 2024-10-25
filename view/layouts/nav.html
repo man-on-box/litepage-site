@@ -1,9 +1,12 @@
 {{ define "nav" }}
 <div
-  class="sticky top-0 px-4 bg-black/75 text-white backdrop-blur rounded-b-lg z-50"
+  class="sticky top-0 px-4 bg-dark sm:bg-black/75 text-white sm:backdrop-blur rounded-b-lg z-50"
 >
-  <nav class="max-w-5xl mx-auto py-2 flex items-center gap-4">
-    <a class="grow font-bold flex items-center gap-4" href="/">
+  <nav class="max-w-5xl mx-auto py-4 sm:py-2 flex items-center gap-4">
+    <a
+      class="text-lg sm:text-sm grow font-bold flex items-center gap-4"
+      href="/"
+    >
       <span
         class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center"
       >
@@ -11,9 +14,12 @@
       </span>
       Litepage
     </a>
-    {{ range .Nav }} {{ $link := index $.Urls .Key}}
+    <span class="sm:hidden text-gray-400 transition hover:text-white">
+      {{ inlineSVG "public/icons/burger.svg" "w-auto h-10" }} {{ range .Nav }}
+      {{ $link := index $.Urls .Key}}
+    </span>
     <a
-      class="text-gray-400 transition hover:text-white"
+      class="hidden sm:block text-gray-400 transition hover:text-white"
       href="{{ $link.Url }}"
       target="{{ $link.Target }}"
       >{{ .Label }}</a

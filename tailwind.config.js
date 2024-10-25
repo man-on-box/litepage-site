@@ -10,7 +10,10 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       gray: colors.gray,
-      cyan: "#79FFF7",
+      cyan: {
+        DEFAULT: "#79FFF7",
+        dark: "#6EE6DF",
+      },
       pink: "#FF66A9",
       yellow: "#FDD600",
       dark: "#0F0F0F",
