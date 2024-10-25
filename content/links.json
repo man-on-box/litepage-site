@@ -1,0 +1,22 @@
+{
+  "urls": {
+    "docs": {
+      "url": "/docs",
+      "target": "_self"
+    },
+    "github": {
+      "url": "https://github.com/man-on-box/litepage",
+      "target": "_blank"
+    }
+  },
+  "nav": [
+    {
+      "label": "Docs",
+      "urlKey": "docs"
+    },
+    {
+      "label": "GitHub",
+      "urlKey": "github"
+    }
+  ]
+}

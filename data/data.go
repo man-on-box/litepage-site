@@ -7,9 +7,22 @@ import (
 	"os"
 )
 
-func New() *ViewData {
-	d := &ViewData{
+type viewData struct {
+	Homepage homepageView
+	PageData PageData
+}
+
+type PageData struct {
+	Links Links
+}
+
+func New() *viewData {
+	pd := PageData{
+		Links: getLinksView(),
+	}
+	d := &viewData{
 		Homepage: getHomepageView(),
+		PageData: pd,
 	}
 	return d
 }

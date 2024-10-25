@@ -16,7 +16,11 @@ module.exports = {
       dark: "#0F0F0F",
       light: "#F9F9F9",
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        solid: "6px 6px 0 rgba(0, 0, 0, 0.25)",
+      },
+    },
   },
   plugins: [],
 };

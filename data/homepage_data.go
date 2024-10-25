@@ -1,24 +1,17 @@
 package data
 
-import "fmt"
-
-type ViewData struct {
-	Homepage HomepageView
-}
-
-type HomepageView struct {
+type homepageView struct {
 	Title      string        `json:"title"`
 	Heading    string        `json:"heading"`
 	Subheading string        `json:"subheading"`
 	Ctas       []ctaItem     `json:"ctas"`
 	Taglines   []taglineItem `json:"taglines"`
+	Snippets   []snippetItem `json:"snippets"`
 }
 
 type ctaItem struct {
-	Label    string `json:"label"`
-	Url      string `json:"url"`
-	Type     string `json:"type"`
-	External bool   `json:"external"`
+	Label string `json:"label"`
+	Key   string `json:"urlKey"`
 }
 
 type taglineItem struct {
@@ -26,10 +19,15 @@ type taglineItem struct {
 	Text string `json:"text"`
 }
 
-func getHomepageView() HomepageView {
-	data := HomepageView{}
-	parseJSONFile("./content/homepage.json", &data)
+type snippetItem struct {
+	Heading     string `json:"heading"`
+	Description string `json:"description"`
+	Snippet     string `json:"snippet"`
+	ColSpan     int    `json:"col-span"`
+}
 
-	fmt.Println(data)
+func getHomepageView() homepageView {
+	data := homepageView{}
+	parseJSONFile("./content/homepage.json", &data)
 	return data
 }

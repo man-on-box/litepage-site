@@ -1,6 +1,8 @@
-{{ define "nav"}}
-<div class="sticky top-0 bg-black text-white backdrop-blur rounded-b-lg">
-  <nav class="max-w-6xl mx-auto p-4 flex items-center gap-4">
+{{ define "nav" }}
+<div
+  class="sticky top-0 px-4 bg-black/75 text-white backdrop-blur rounded-b-lg z-50"
+>
+  <nav class="max-w-5xl mx-auto py-2 flex items-center gap-4">
     <a class="grow font-bold flex items-center gap-4" href="/">
       <span
         class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center"
@@ -9,8 +11,14 @@
       </span>
       Litepage
     </a>
-    <a href="/">Docs</a>
-    <a href="/">GitHub</a>
+    {{ range .Nav }} {{ $link := index $.Urls .Key}}
+    <a
+      class="text-gray-400 transition hover:text-white"
+      href="{{ $link.Url }}"
+      target="{{ $link.Target }}"
+      >{{ .Label }}</a
+    >
+    {{ end }}
   </nav>
 </div>
 {{ end }}

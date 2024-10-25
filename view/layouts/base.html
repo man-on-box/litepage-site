@@ -30,7 +30,19 @@
     {{ template "scripts" }}
   </head>
   <body class="antialiased bg-dark">
-    {{ template "nav"}} {{ template "body" .}}
+    {{ template "nav" .PageData.Links }} {{ template "body" .}} {{ template
+    "footer" }}
   </body>
 </html>
+{{ end }}
+
+<!-- footer -->
+{{ define "footer" }}
+<footer class="mx-auto px-4 flex items-center gap-4">
+  <div class="max-w-5xl mx-auto py-10">
+    <p class="font-light text-center text-sm text-gray-400">
+      MIT License © {{ currentYear }} · Litepage
+    </p>
+  </div>
+</footer>
 {{ end }}

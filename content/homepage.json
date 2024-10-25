@@ -5,20 +5,51 @@
   "ctas": [
     {
       "label": "Get started",
-      "url": "/docs",
-      "type": "primary",
-      "external": false
+      "urlKey": "docs"
     },
     {
       "label": "See on GitHub",
-      "url": "https://github.com/man-on-box/litepage",
-      "type": "secondary",
-      "external": true
+      "urlKey": "github"
     }
   ],
   "taglines": [
-    { "icon": "cpu", "text": "Works with any static site hosting provider" },
-    { "icon": "puzzle", "text": "Easy integration with minimal footprint" },
-    { "icon": "zap", "text": "Contains zero additional dependencies" }
+    {
+      "icon": "public/icons/cpu.svg",
+      "text": "Works with any static site hosting provider"
+    },
+    {
+      "icon": "public/icons/puzzle.svg",
+      "text": "Easy integration with minimal footprint"
+    },
+    {
+      "icon": "public/icons/zap.svg",
+      "text": "Contains zero additional dependencies"
+    }
+  ],
+  "snippets": [
+    {
+      "heading": "Declaratively create your pages",
+      "description": "Pass a relative file path to create your pages in a declarative fashion. Work with the standard io.Writer interface to support any templating library.",
+      "snippet": "lp.Page(\"/index.html\", func(w io.Writer) {\r\n  html := \"<h1>Hello, World!</h1>\"\r\n  t := template.Must(template.New(\"helloWorld\").Parse(html))\r\n  t.Execute(w, nil)\r\n})",
+      "col-span": 2
+    },
+    {
+      "heading": "Minimal folder structure",
+      "description": "Put all your static assets in your public folder. Your finished site will be placed in your dist folder.",
+      "snippet": "my-cool-site\r\n└── public\r\n  ├── favicon.ico\r\n  ├── logo.svg\r\n  └── styles.css\r\n└── dist",
+      "col-span": 1
+    },
+    {
+      "heading": "Tiny API surface",
+      "description": "No deep dives required. Only four methods to work with to create you’re next project.",
+      "snippet": "lp.Page(...)\r\n\r\nlp.Build()\r\n\r\nlp.Serve(\"3000\")\r\n\r\nlp.BuildOrServe()",
+      "col-span": 1
+    },
+    {
+      "heading": "Sitemap out of the box",
+      "description": "Get a basic sitemap.xml of all your pages by default, out of the box. Anything to get that extra SEO boost when getting your new site out there on the web.",
+      "snippet": "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\r\n  <url>\r\n    <loc>https://my-cool-site.dev/</loc>\r\n  </url>\r\n  <url>\r\n    <loc>https://my-cool-site.dev/about</loc>\r\n  </url>\r\n</urlset>",
+      "col-span": 2
+    }
   ]
 }

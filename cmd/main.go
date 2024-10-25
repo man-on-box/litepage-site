@@ -15,8 +15,8 @@ func main() {
 		log.Fatalf("Could not create litepage app: %v", err)
 	}
 
-	vh := view.NewViewHandler()
 	d := data.New()
+	vh := view.NewViewHandler(d.PageData)
 
 	lp.Page("/index.html", func(w io.Writer) {
 		vh.Index.Render(w, d.Homepage)
