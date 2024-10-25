@@ -1,30 +1,52 @@
 {{ define "nav" }}
 <div
-  class="sticky top-0 px-4 bg-dark sm:bg-black/75 text-white sm:backdrop-blur rounded-b-lg z-50"
+  class="sticky top-0 px-4 bg-dark sm:bg-black/75 text-gray-400 sm:backdrop-blur rounded-b-lg z-50"
 >
-  <nav class="max-w-5xl mx-auto py-4 sm:py-2 flex items-center gap-4">
-    <a
-      class="text-lg sm:text-sm grow font-bold flex items-center gap-4"
-      href="/"
-    >
-      <span
-        class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center"
+  <nav class="max-w-5xl mx-auto py-4 sm:py-2 transition-all">
+    <div class="flex items-center gap-4">
+      <a
+        class="text-lg sm:text-sm grow font-bold flex items-center gap-4 text-white"
+        href="/"
       >
-        {{ inlineSVG "public/litepage.svg" "w-auto h-7 mb-1"}}
-      </span>
-      Litepage
-    </a>
-    <span class="sm:hidden text-gray-400 transition hover:text-white">
-      {{ inlineSVG "public/icons/burger.svg" "w-auto h-10" }} {{ range .Nav }}
-      {{ $link := index $.Urls .Key}}
-    </span>
-    <a
-      class="hidden sm:block text-gray-400 transition hover:text-white"
-      href="{{ $link.Url }}"
-      target="{{ $link.Target }}"
-      >{{ .Label }}</a
+        <span
+          class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center"
+        >
+          {{ inlineSVG "public/litepage.svg" "w-auto h-7 mb-1"}}
+        </span>
+        Litepage
+      </a>
+      <!-- desktop nav -->
+      {{ range .Nav }} {{ $link := index $.Urls .Key}}
+      <a
+        class="hidden sm:block transition hover:text-white"
+        href="{{ $link.Url }}"
+        target="{{ $link.Target }}"
+        >{{ .Label }}</a
+      >
+      {{ end }}
+      <!-- mobile nav -->
+      <button
+        id="nav-toggle"
+        class="sm:hidden transition hover:text-white"
+        aria-label="Nav menu"
+        aria-expanded="false"
+      >
+        {{ inlineSVG "public/icons/burger.svg" "w-auto h-10" }}
+      </button>
+    </div>
+    <div
+      id="nav-menu"
+      class="hidden flex-col sm:hidden items-center py-4 gap-4 text-lg"
     >
-    {{ end }}
+      {{ range .Nav }} {{ $link := index $.Urls .Key}}
+      <a
+        class="transition hover:text-white p-4"
+        href="{{ $link.Url }}"
+        target="{{ $link.Target }}"
+        >{{ .Label }}</a
+      >
+      {{ end }}
+    </div>
   </nav>
 </div>
 {{ end }}

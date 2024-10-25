@@ -15,7 +15,7 @@
     {{ range $index, $cta := .Data.Ctas }} {{ $link := index
     $.PageData.Links.Urls $cta.Key}}
     <a
-      class="text-center py-2 px-10 border {{ if eq $index 0}}border-pink bg-pink/65{{ else }}border-white{{ end }} rounded-lg text-white font-bold hover:scale-105 transition"
+      class="text-center py-4 sm:py-2 px-10 border {{ if eq $index 0}}border-pink bg-pink/65{{ else }}border-white{{ end }} rounded-lg text-white font-bold hover:scale-105 transition"
       href="{{ $link.Url }}"
       target="{{ $link.Target }}"
     >
@@ -23,9 +23,7 @@
     </a>
     {{ end }}
   </div>
-  <h2
-    class="text-white text-justify sm:text-center text-2xl max-w-[50ch] mx-auto my-20"
-  >
+  <h2 class="text-white text-center text-2xl max-w-[50ch] mx-auto my-20">
     {{ .Data.Subheading}}
   </h2>
   <div
@@ -67,7 +65,7 @@
       <div class="my-20 flex flex-col gap-5">
         <h3 class="text-center font-bold text-lg">Ready to learn more?</h3>
         <a
-          class="mx-auto py-2 px-10 rounded-lg border border-yellow bg-white font-bold hover:scale-105 transition"
+          class="mx-auto py-4 sm:py-2 px-10 rounded-lg border border-yellow bg-white font-bold hover:scale-105 transition"
           href="/docs"
           >Go to the docs</a
         >
