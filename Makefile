@@ -9,5 +9,5 @@ serve:
 
 build:
 	@echo "Building for prod"
-	@go run main.go
+	@go run cmd/main.go
 	@npx tailwind -i ./style/main.css -o ./dist/main.css --minify
