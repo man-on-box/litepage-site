@@ -15,23 +15,25 @@ import (
 
 type ViewHandler struct {
 	Index *view
+	Docs  *view
 }
 
-func NewViewHandler(pd data.PageData) *ViewHandler {
+func NewViewHandler(pd *data.PageData) *ViewHandler {
 	return &ViewHandler{
 		Index: newView(pd, "base", "view/index.html"),
+		Docs:  newView(pd, "base", "view/doc-page.html"),
 	}
 }
 
 type viewData struct {
-	PageData data.PageData
+	PageData *data.PageData
 	Data     any
 }
 
 type view struct {
 	Layout   string
 	Template *template.Template
-	PageData data.PageData
+	PageData *data.PageData
 }
 
 var tmpl = template.New("").Funcs(template.FuncMap{
@@ -44,7 +46,7 @@ var tmpl = template.New("").Funcs(template.FuncMap{
 	"inlineSVG": inlineSVG,
 })
 
-func newView(pd data.PageData, layout string, files ...string) *view {
+func newView(pd *data.PageData, layout string, files ...string) *view {
 	files = append(layoutFiles(), files...)
 	t, err := tmpl.ParseFiles(files...)
 	if err != nil {

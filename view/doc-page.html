@@ -1,0 +1,22 @@
+<!-- title -->
+{{ define "title" }}{{ .Data.Title }}{{ end }}
+
+<!-- Meta -->
+{{ define "meta-description" }}{{ .Data.Description }}{{ end }}
+
+<!-- scripts -->
+{{ define "scripts" }}{{ end }}
+
+<!-- body -->
+{{ define "body" }}
+<div class="max-w-5xl mx-auto">
+  <div class="mt-5 flex flex-row gap-4">
+    <div class="bg-gray-900 p-4 rounded-lg text-gray-400 min-w-56 max-w-xl">
+      Contents page....
+    </div>
+    <div class="bg-light px-4 py-8 rounded-lg grow">
+      <article class="prose">{{ .Data.Content }}</article>
+    </div>
+  </div>
+</div>
+{{ end }}
