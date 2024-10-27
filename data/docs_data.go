@@ -35,6 +35,7 @@ type docPage struct {
 	Path        string
 	Title       string
 	Description string
+	Section     string
 	Content     template.HTML
 }
 
@@ -83,6 +84,7 @@ func parseDocs() docsView {
 			Path:        docsPath + ".html",
 			Title:       fm.Title,
 			Description: fm.Description,
+			Section:     fm.Section,
 			Content:     html,
 		})
 	}
