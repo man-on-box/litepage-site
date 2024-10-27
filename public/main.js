@@ -16,12 +16,6 @@
       toggleNav();
     });
 
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        toggleNav();
-      });
-    });
-
     function toggleNav() {
       expanded = !expanded;
       navMenu.classList.toggle("hidden");
