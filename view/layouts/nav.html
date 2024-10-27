@@ -33,18 +33,17 @@
         {{ inlineSVG "public/icons/burger.svg" "w-auto h-10" }}
       </button>
     </div>
-    <div
-      id="nav-menu"
-      class="hidden flex-col sm:hidden items-center py-4 gap-4 text-lg"
-    >
-      {{ range .Nav }} {{ $link := index $.Urls .Key}}
-      <a
-        class="transition hover:text-white p-4"
-        href="{{ $link.Url }}"
-        target="{{ $link.Target }}"
-        >{{ .Label }}</a
-      >
-      {{ end }}
+    <div id="nav-menu" class="hidden sm:hidden items-center py-4 text-lg">
+      <nav class="flex flex-col gap-4 items-center">
+        {{ range .Nav }} {{ $link := index $.Urls .Key}}
+        <a
+          class="transition hover:text-white p-4"
+          href="{{ $link.Url }}"
+          target="{{ $link.Target }}"
+          >{{ .Label }}</a
+        >
+        {{ end }}
+      </nav>
     </div>
   </nav>
 </div>
