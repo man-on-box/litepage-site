@@ -45,7 +45,7 @@ type docFrontmatter struct {
 	Description string `yaml:"description"`
 }
 
-const docsDir = "content/docs"
+const docsDir = "content/docs/"
 
 func parseDocs() docsView {
 	sections := []docsSection{}
