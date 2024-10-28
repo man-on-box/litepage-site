@@ -45,10 +45,12 @@ type docFrontmatter struct {
 	Description string `yaml:"description"`
 }
 
+const docsDir = "content/docs"
+
 func parseDocs() docsView {
 	sections := []docsSection{}
 	pages := []*docPage{}
-	entries, err := os.ReadDir("content/docs")
+	entries, err := os.ReadDir(docsDir)
 	if err != nil {
 		log.Fatalf("Error reading docs directory: %v", err)
 	}
@@ -56,14 +58,14 @@ func parseDocs() docsView {
 	// We'll assume the order of files are also by section.
 	// This way I don't need to create an ordered map
 	for index, entry := range entries {
-		entryPath := "content/docs/" + entry.Name()
+		entryPath := docsDir + entry.Name()
 		fm := &docFrontmatter{}
 		html := parseMdFile(entryPath, fm)
 
 		docsPath := "/docs/" + fm.Slug
 
-		// Build content sections here...
-		if len(sections) == 0 || sections[len(sections)-1].Label != fm.Section {
+		isNewSection := len(sections) == 0 || sections[len(sections)-1].Label != fm.Section
+		if isNewSection {
 			s := docsSection{
 				Label: fm.Section,
 				Items: []sectionItem{

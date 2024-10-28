@@ -7,7 +7,7 @@ description: Learn how Litepage aims to make building static sites simpler
 
 # Creating a simpler web
 
-Frameworks come and go. They evolve, they grow, they change and they require varying degrees of knowledge to use and keep up to date.
+Frameworks come and go. They evolve, they grow, they compete and they require varying degrees of knowledge to use and maintenance to keep up to date.
 
 There are a plethora of frameworks that can build static sites. My favourite being [Astro](https://astro.build/), as well as [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.com/), [Jekyll](https://jekyllrb.com/docs/), [Eleventy](https://www.11ty.dev/), [Hugo](https://gohugo.io/)... and this is just the [tip of the iceberg](https://jamstack.org/generators/).
 
