@@ -33,19 +33,18 @@ The following environment variables are checked when calling this method:
 Here is an example [Makefile](https://www.gnu.org/software/make/manual/make.html) where we are building or serving the site by specifying environment variables.
 
 ```make
+build:
+	# No env variables set here, so building by default
+	go run cmd/main.go
+
 serve:
 	# LP_MODE is set to 'serve', so the site will be served on
 	# default port 3000
-	@LP_MODE=serve go run cmd/main.go
-
-build:
-	# No env variables set here, so building by default
-	@go run cmd/main.go
+	LP_MODE=serve go run cmd/main.go
 
 dev:
 	# LP_MODE is set to 'serve' and LP_PORT is set to 3001, so the
 	# site will be served on port 3001. Useful if you're using a
 	# hot reloading proxy like 'air'
-	@LP_MODE=serve LP_PORT=3001 air
-
+	LP_MODE=serve LP_PORT=3001 air
 ```
