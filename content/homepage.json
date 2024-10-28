@@ -29,7 +29,7 @@
   "snippets": [
     {
       "heading": "Declaratively create your pages",
-      "description": "Pass a relative file path to create your pages in a declarative fashion. Work with the standard io.Writer interface to support any templating library.",
+      "description": "Pass a relative file path to create your pages.  Work with the standard io.Writer interface to support any templating library.",
       "snippet": "lp.Page(\"/index.html\", func(w io.Writer) {\r\n  html := \"<h1>Hello, World!</h1>\"\r\n  t := template.Must(template.New(\"helloWorld\").Parse(html))\r\n  t.Execute(w, nil)\r\n})",
       "col-span": 2
     },
@@ -41,7 +41,7 @@
     },
     {
       "heading": "Tiny API surface",
-      "description": "No deep dives required. Only four methods to work with to create you’re next project.",
+      "description": "No deep dives required. Only four methods to work with to create your next project.",
       "snippet": "lp.Page(...)\r\n\r\nlp.Build()\r\n\r\nlp.Serve(\"3000\")\r\n\r\nlp.BuildOrServe()",
       "col-span": 1
     },
