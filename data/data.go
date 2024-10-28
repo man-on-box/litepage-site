@@ -2,7 +2,6 @@ package data
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"log"
 	"os"
@@ -10,25 +9,20 @@ import (
 
 type viewData struct {
 	Homepage homepageView
-	DocPages *[]docPage
+	DocPages *[]*docPage
 	PageData *PageData
 }
 
 type PageData struct {
-	Links       Links
-	DocContents *[]docsSection
+	Links        Links
+	DocsSections *[]docsSection
 }
 
 func New() *viewData {
 	docs := parseDocs()
 	pd := &PageData{
-		Links:       getLinksView(),
-		DocContents: docs.Contents,
-	}
-	for _, t := range *docs.Contents {
-		fmt.Println(t.Label)
-		fmt.Println(len(t.Items))
-
+		Links:        getLinksView(),
+		DocsSections: docs.Sections,
 	}
 	d := &viewData{
 		Homepage: getHomepageView(),

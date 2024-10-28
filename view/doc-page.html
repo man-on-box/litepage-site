@@ -1,5 +1,5 @@
 <!-- title -->
-{{ define "title" }}{{ .Data.Title }}{{ end }}
+{{ define "title" }}{{ .Data.Title }} | Litepage{{ end }}
 
 <!-- Meta -->
 {{ define "meta-description" }}{{ .Data.Description }}{{ end }}
@@ -8,18 +8,20 @@
 {{ define "scripts" }}{{ end }}
 
 <!-- body -->
-{{ define "body" }}
+{{ define "body" }} {{ $navBgColor := "bg-gray-800"}}
 <div class="px-4">
   <div class="max-w-5xl mx-auto relative">
     <aside
-      class="hidden md:block md:fixed w-[15rem] inset-0 top-[5.3rem] left-[max(1rem,calc(50%-32rem))] right-auto overflow-y-auto rounded-lg text-gray-400"
+      class="hidden md:block md:fixed w-[15rem] lg:w-[18rem] inset-0 top-[5.3rem] left-[max(1rem,calc(50%-32rem))] right-auto overflow-y-auto text-gray-400"
     >
-      <nav class="bg-gray-900 p-4 text-sm">
+      <nav class="{{ $navBgColor }} rounded-lg p-4 text-sm">
         {{ template "doc-nav-items" . }}
       </nav>
     </aside>
-    <div class="md:pl-[15rem] mt-5">
-      <div class="md:hidden rounded-lg bg-gray-900 text-gray-300 p-4 mb-4">
+    <div class="md:pl-[15rem] lg:pl-[18rem] mt-5">
+      <div
+        class="md:hidden rounded-lg {{ $navBgColor }} text-gray-300 p-4 mb-4"
+      >
         <div class="flex gap-4 items-center">
           <button
             id="docs-nav-mobile-toggle"
@@ -29,7 +31,10 @@
           >
             {{ inlineSVG "public/icons/burger.svg" "w-auto h-8" }}
           </button>
-          <p>{{ .Data.Section }} / {{ .Data.Title }}</p>
+          <p class="truncate">
+            <span class="font-semibold">{{ .Data.Section }}</span> / {{
+            .Data.Title }}
+          </p>
         </div>
         <nav id="docs-nav-mobile-menu" class="mt-4 hidden">
           {{ template "doc-nav-items" . }}
@@ -40,6 +45,31 @@
       >
         <p class="hidden md:block text-gray-600 mb-4">{{ .Data.Section }} /</p>
         <article class="prose">{{ .Data.Content }}</article>
+        <hr class="my-8" />
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            {{ if .Data.Previous}}
+            <a
+              href="{{ .Data.Previous.Path }}"
+              class="block transition h-full text-sm sm:text-lg border-2 rounded-lg border-gray-300 hover:border-cyan-dark hover:shadow-solid p-4"
+            >
+              <p class="text-gray-600 text-xs sm:text-sm">← Previous</p>
+              {{ .Data.Previous.Title }}
+            </a>
+            {{ end }}
+          </div>
+          <div>
+            {{ if .Data.Next}}
+            <a
+              href="{{ .Data.Next.Path }}"
+              class="block transition h-full text-sm sm:text-lg border-2 rounded-lg border-gray-300 hover:border-pink hover:shadow-solid p-4 text-right"
+            >
+              <p class="text-gray-600 text-xs sm:text-sm">Next →</p>
+              {{ .Data.Next.Title }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
       </div>
       {{ template "footer" }}
     </div>
@@ -49,13 +79,13 @@
 
 <!-- docs nav items -->
 {{ define "doc-nav-items"}} {{ $currentPage := .Data.Title }} {{ range
-.PageData.DocContents }}
+.PageData.DocsSections }}
 <span class="font-bold text-gray-200">{{ .Label }}</span>
 <ul class="space-y-3 my-4 border-l border-gray-700">
   {{ range .Items }}
   <li class="pl-2">
     {{ if eq $currentPage .Label }}
-    <span class="text-white font-bold">{{ .Label }}</span>
+    <span class="text-pink font-bold">› {{ .Label }}</span>
     {{ else}}
     <a class="transition hover:text-white" href="{{ .Path }}">{{ .Label }}</a>
     {{ end }}

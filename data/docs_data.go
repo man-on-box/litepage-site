@@ -7,36 +7,35 @@ import (
 	"os"
 
 	"github.com/yuin/goldmark"
+	highlighting "github.com/yuin/goldmark-highlighting/v2"
 	"github.com/yuin/goldmark/parser"
+	"github.com/yuin/goldmark/renderer/html"
 	"go.abhg.dev/goldmark/frontmatter"
 )
 
-// Main return. Contents are to be used in every docs page template
-// Pages are to iterate over to create every docs page
 type docsView struct {
-	Contents *[]docsSection
-	Pages    *[]docPage
+	Sections *[]docsSection
+	Pages    *[]*docPage
 }
 
-// Contains docs sections and their items
 type docsSection struct {
 	Label string
 	Items []sectionItem
 }
 
-// Section item, used to create a tags in contents pane
 type sectionItem struct {
 	Label string
 	Path  string
 }
 
-// Actual docs page, includes path to create and contents
 type docPage struct {
 	Path        string
 	Title       string
 	Description string
 	Section     string
 	Content     template.HTML
+	Next        *docPage
+	Previous    *docPage
 }
 
 type docFrontmatter struct {
@@ -48,15 +47,15 @@ type docFrontmatter struct {
 
 func parseDocs() docsView {
 	sections := []docsSection{}
-	pages := []docPage{}
+	pages := []*docPage{}
 	entries, err := os.ReadDir("content/docs")
 	if err != nil {
 		log.Fatalf("Error reading docs directory: %v", err)
 	}
 
-	// We'll assume the order of docs are also by section.
+	// We'll assume the order of files are also by section.
 	// This way I don't need to create an ordered map
-	for _, entry := range entries {
+	for index, entry := range entries {
 		entryPath := "content/docs/" + entry.Name()
 		fm := &docFrontmatter{}
 		html := parseMdFile(entryPath, fm)
@@ -79,25 +78,39 @@ func parseDocs() docsView {
 			})
 		}
 
-		// Build docs list here
-		pages = append(pages, docPage{
+		page := &docPage{
 			Path:        docsPath + ".html",
 			Title:       fm.Title,
 			Description: fm.Description,
 			Section:     fm.Section,
 			Content:     html,
-		})
+		}
+
+		if index > 0 {
+			previousPage := pages[index-1]
+			page.Previous = previousPage
+			previousPage.Next = page
+
+		}
+
+		pages = append(pages, page)
 	}
 
 	return docsView{
-		Contents: &sections,
+		Sections: &sections,
 		Pages:    &pages,
 	}
 }
 
 var mdParser = goldmark.New(
+	goldmark.WithRendererOptions(
+		html.WithUnsafe(),
+	),
 	goldmark.WithExtensions(
 		&frontmatter.Extender{},
+		highlighting.NewHighlighting(
+			highlighting.WithStyle("vulcan"),
+		),
 	),
 )
 

@@ -1,7 +1,7 @@
 {{ define "base" }}
 <!doctype html>
-<html lang="en">
-  {{ template "head" }}
+<html lang="en" class="dark">
+  {{ template "head" . }}
   <body class="antialiased bg-dark">
     {{ template "nav" .PageData.Links }} {{ template "body" .}} {{ template
     "footer" }}
@@ -12,8 +12,8 @@
 <!-- base for doc pages -->
 {{ define "base-docs" }}
 <!doctype html>
-<html lang="en">
-  {{ template "head" }}
+<html lang="en" class="dark">
+  {{ template "head" . }}
   <body class="antialiased bg-dark">
     {{ template "nav" .PageData.Links }} {{ template "body" .}}
   </body>
