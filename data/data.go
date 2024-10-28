@@ -9,13 +9,13 @@ import (
 
 type viewData struct {
 	Homepage homepageView
-	DocPages *[]*docPage
+	DocPages []*docPage
 	PageData *PageData
 }
 
 type PageData struct {
 	Links        Links
-	DocsSections *[]docsSection
+	DocsSections []docsSection
 }
 
 func New() *viewData {

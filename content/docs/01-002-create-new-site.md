@@ -33,4 +33,4 @@ func main() {
 
 It really is that simple. Our site is now ready to deploy on a static site provider somewhere.
 
-We could leave it here, but most likely you will want to build something slightly more ambitious and learn more about the development flow. For this we can learn more about the methods individually in the next section.
+We could leave it here, but most likely you will want to build something slightly more ambitious and learn more about the development flow. For this we can learn more about the methods and their usage in the next sections.

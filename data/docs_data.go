@@ -14,8 +14,8 @@ import (
 )
 
 type docsView struct {
-	Sections *[]docsSection
-	Pages    *[]*docPage
+	Sections []docsSection
+	Pages    []*docPage
 }
 
 type docsSection struct {
@@ -79,7 +79,7 @@ func parseDocs() docsView {
 		}
 
 		page := &docPage{
-			Path:        docsPath + ".html",
+			Path:        docsPath,
 			Title:       fm.Title,
 			Description: fm.Description,
 			Section:     fm.Section,
@@ -97,8 +97,8 @@ func parseDocs() docsView {
 	}
 
 	return docsView{
-		Sections: &sections,
-		Pages:    &pages,
+		Sections: sections,
+		Pages:    pages,
 	}
 }
 
