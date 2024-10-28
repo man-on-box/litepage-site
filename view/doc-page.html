@@ -9,7 +9,7 @@
 
 <!-- body -->
 {{ define "body" }} {{ $navBgColor := "bg-gray-800"}}
-<div class="px-4">
+<div class="sm:px-4">
   <div class="max-w-5xl mx-auto relative">
     <aside
       class="hidden md:block md:fixed w-[15rem] lg:w-[18rem] inset-0 top-[5.3rem] left-[max(1rem,calc(50%-32rem))] right-auto overflow-y-auto text-gray-400"
@@ -20,7 +20,7 @@
     </aside>
     <div class="md:pl-[15rem] lg:pl-[18rem] mt-5">
       <div
-        class="md:hidden rounded-lg {{ $navBgColor }} text-gray-300 p-4 mb-4"
+        class="mx-4 sm:mx-0 md:hidden rounded-lg {{ $navBgColor }} text-gray-300 p-4 mb-4"
       >
         <div class="flex gap-4 items-center">
           <button
