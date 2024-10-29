@@ -43,7 +43,7 @@
   class="bg-light text-dark bg-gradient-to-br from-light from-10% via-cyan/10 to-yellow/10 max-w-5xl mx-auto rounded-2xl px-4 sm:px-8 py-10 pattern-zigzag-3d pattern-blue-500 pattern-bg-white pattern-size-6 pattern-opacity-20"
 >
   <div class="max-w-4xl mx-auto">
-    <h2 class="mb-10 text-2xl font-bold">As simple as it gets.</h2>
+    <h2 class="mb-10 text-2xl font-bold">{{ .Data.SnippetsHeading }}</h2>
     <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-3 gap-8 my-10">
       {{ range .Data.Snippets }}
       <div

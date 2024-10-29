@@ -29,4 +29,6 @@ An error is returned if the file path is not valid, or if you have already creat
 
 ## Flexible Data Sources and Template Handling
 
-Note how Litepage has no opinion on where your data is coming from, or how you build your templates. You can add as many pages as you need, and call this function however you like. The source of your data can be from some database, CMS, external API or files in your project.
+Note how Litepage has no opinion on where your data is coming from, or how you build your templates. You can add as many pages as you need, and call this function however you like. The source of your data can be from some database, CMS, external API, whatever you need.
+
+Most commonly the source of your data will be files within the project, like JSON or Markdown files. Litepage works well with the [Jamstack](https://jamstack.org/) architectural approach and if necessary, you can pair this with Headless CMS systems like [Keystone](https://keystonejs.com/) that support this architecture.

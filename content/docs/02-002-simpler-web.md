@@ -9,7 +9,7 @@ description: Learn how Litepage aims to make building static sites simpler
 
 Frameworks come and go. They evolve, they grow, they compete and they require varying degrees of knowledge to use and maintenance to keep up to date.
 
-There are a plethora of frameworks that can build static sites. My favourite being [Astro](https://astro.build/), as well as [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.com/), [Jekyll](https://jekyllrb.com/docs/), [Eleventy](https://www.11ty.dev/), [Hugo](https://gohugo.io/)... and this is just the [tip of the iceberg](https://jamstack.org/generators/).
+There are a plethora of frameworks that can build static sites, my favourite being [Astro](https://astro.build/), along with [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.com/), [Jekyll](https://jekyllrb.com/docs/), [Eleventy](https://www.11ty.dev/), [Hugo](https://gohugo.io/)... and this is just the [tip of the iceberg](https://jamstack.org/generators/).
 
 ## The cost of frameworks
 
@@ -37,7 +37,7 @@ And that is all. The rest, I wanted to be able to pick and choose on a per proje
 
 To keep things simple, Litepage works with just the standard `io.Writer` interface, meaning you are in control on how you parse your data and templates. If you wanted to remove Litepage from your project at a later date, you could just swap it out and write the code manually to create your static site.
 
-## Isn't this just extra effort?
+## Isn't this extra effort?
 
 Yes! It's extra effort to get started. There is no _magic_ here, just simplicity. While it is extra effort to get started, later down the line you should incur less techincal debt, as it's very unlikely Go, HTML or CSS will have changed much.
 

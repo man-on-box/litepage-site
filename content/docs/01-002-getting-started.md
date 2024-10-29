@@ -1,22 +1,19 @@
 ---
-slug: index
+slug: installation
 title: Installation
 section: Getting started
 description: Learn how to get started and add Litepage to your project
 ---
 
-# Getting started with Litepage
-
-Litepage is a lightweight library written in Go that simplifies building static sites. You declare the pages you want to create and it will build or serve your static site, along with any assets in your `/public` folder.
-
-You can use this library in conjunction with any static site hosting provider like [GitHub Pages](https://pages.github.com/), [Cloudflare Pages](https://pages.cloudflare.com/) to get your static site up and running with minimal effort.
+# Adding Litepage to your project
 
 ## Prerequisites
 
-These are not hard requirements as we'll go over these later, but they are recommended.
+These are not hard requirements as you can learn as you go, but they are recommended.
 
 - Basic knowledge of [Go](https://go.dev/)
 - Basic knowledge of Go [HTML templating](https://pkg.go.dev/html/template)
+- Knowledge of HTML, CSS, JS (no ready-made templates here)
 
 ## Installation
 
@@ -34,5 +31,27 @@ Litepage has not much opinion on the folder layout of your project. The only fol
 
 - `public/*` - to place your static assets (js, css, icons, images, etc.)
 - `dist/*` - contains the outputted site when built, ready to be hosted
+
+### Example project structure
+
+For a small project, it may look something like this, but you are free to structure however you wish.
+
+```
+my-cool-site
+└── content
+  ├── some-json.json
+  └── some-markdown.md
+└── dist
+  └── *built site files*
+└── public
+  ├── favicon.ico
+  ├── logo.svg
+  └── styles.css
+└── view
+  └── homepage.html
+└── main.go
+└── go.mod
+└── go.sum
+```
 
 With these steps done, you are ready to start creating your static site!
