@@ -23,15 +23,15 @@ Litepage is for frontend developers who may have only built sites with frontend 
 
 Litepage is for backend developers who want to:
 
-- Build their own layouts and pages with a language they already know
-- Add a static site builder with minimal impact to a project
-- Build beautiful pages, without using a JS framework
-- Have fun learning HTML, CSS and JS, while working in a familiar language
+- build their own layouts and pages with a language they already know
+- add a static site builder with minimal impact to a project
+- build beautiful pages, without using a JS framework
+- have fun learning HTML, CSS and JS, while working in a familiar language
 
 And no matter what background you are coming from, Litepage is for **developers who want to build sites with a simple stack**.
 
 ## Who Litepage is not for
 
-- For non-developers looking to create sites without coding
-- For developers looking to leverage existing templates and layouts
-- For developers looking for a feature rich, opinionated static site builders
+- non-developers looking to create sites without coding
+- developers looking to leverage existing templates and layouts
+- developers looking for a feature rich, opinionated static site builders
