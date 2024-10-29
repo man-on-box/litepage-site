@@ -22,5 +22,11 @@ func main() {
 		vh.Index.Render(w, d.Homepage)
 	})
 
+	for _, docPage := range d.DocPages {
+		lp.Page(docPage.Path+".html", func(w io.Writer) {
+			vh.Docs.Render(w, docPage)
+		})
+	}
+
 	lp.BuildOrServe()
 }

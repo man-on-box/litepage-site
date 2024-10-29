@@ -15,37 +15,40 @@ import (
 
 type ViewHandler struct {
 	Index *view
+	Docs  *view
 }
 
-func NewViewHandler(pd data.PageData) *ViewHandler {
+func NewViewHandler(pd *data.PageData) *ViewHandler {
 	return &ViewHandler{
 		Index: newView(pd, "base", "view/index.html"),
+		Docs:  newView(pd, "base-docs", "view/doc-page.html"),
 	}
 }
 
 type viewData struct {
-	PageData data.PageData
+	PageData *data.PageData
 	Data     any
 }
 
 type view struct {
 	Layout   string
 	Template *template.Template
-	PageData data.PageData
+	PageData *data.PageData
 }
 
-var tmpl = template.New("").Funcs(template.FuncMap{
-	"version": func() string {
-		return time.Now().Format("01021504")
-	},
-	"currentYear": func() string {
-		return strconv.Itoa(time.Now().Year())
-	},
-	"inlineSVG": inlineSVG,
-})
-
-func newView(pd data.PageData, layout string, files ...string) *view {
+func newView(pd *data.PageData, layout string, files ...string) *view {
 	files = append(layoutFiles(), files...)
+
+	tmpl := template.New("").Funcs(template.FuncMap{
+		"version": func() string {
+			return time.Now().Format("01021504")
+		},
+		"currentYear": func() string {
+			return strconv.Itoa(time.Now().Year())
+		},
+		"inlineSVG": inlineSVG,
+	})
+
 	t, err := tmpl.ParseFiles(files...)
 	if err != nil {
 		log.Printf("error while parsing files: %v", err)

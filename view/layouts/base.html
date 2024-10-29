@@ -1,40 +1,53 @@
 {{ define "base" }}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/litepage.svg" />
-    <link href="/main.css?v={{ version }}" rel="stylesheet" />
-    <title>{{ template "title" . }}</title>
-    <meta name="description" content='{{ template "meta-description" . }}' />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://litepage.dev" />
-    <meta property="og:title" content='{{ template "title". }}' />
-    <meta
-      property="og:description"
-      content='{{ template "meta-description" . }}'
-    />
-    <meta property="og:image" content="https://litepage.dev/img/social.png" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://litepage.dev" />
-    <meta property="twitter:title" content='{{ template "title" . }}' />
-    <meta
-      property="twitter:description"
-      content='{{ template "meta-description" . }}'
-    />
-    <meta
-      property="twitter:image"
-      content="https://manonbox.io/img/social.png"
-    />
-    <script defer src="/main.js?v={{version}}"></script>
-    {{ template "scripts" }}
-  </head>
+  {{ template "head" . }}
   <body class="antialiased bg-dark">
     {{ template "nav" .PageData.Links }} {{ template "body" .}} {{ template
     "footer" }}
   </body>
 </html>
+{{ end }}
+
+<!-- base for doc pages -->
+{{ define "base-docs" }}
+<!doctype html>
+<html lang="en">
+  {{ template "head" . }}
+  <body class="antialiased bg-dark">
+    {{ template "nav" .PageData.Links }} {{ template "body" .}}
+  </body>
+</html>
+{{ end }}
+
+<!-- head -->
+{{ define "head"}}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/litepage.svg" />
+  <link href="/main.css?v={{ version }}" rel="stylesheet" />
+  <title>{{ template "title" . }}</title>
+  <meta name="description" content='{{ template "meta-description" . }}' />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://litepage.dev" />
+  <meta property="og:title" content='{{ template "title". }}' />
+  <meta
+    property="og:description"
+    content='{{ template "meta-description" . }}'
+  />
+  <meta property="og:image" content="https://litepage.dev/img/social.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://litepage.dev" />
+  <meta property="twitter:title" content='{{ template "title" . }}' />
+  <meta
+    property="twitter:description"
+    content='{{ template "meta-description" . }}'
+  />
+  <meta property="twitter:image" content="https://manonbox.io/img/social.png" />
+  <script defer src="/main.js?v={{version}}"></script>
+  {{ template "scripts" }}
+</head>
 {{ end }}
 
 <!-- footer -->

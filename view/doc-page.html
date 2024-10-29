@@ -1,0 +1,117 @@
+<!-- title -->
+{{ define "title" }}{{ .Data.Title }} | Litepage{{ end }}
+
+<!-- Meta -->
+{{ define "meta-description" }}{{ .Data.Description }}{{ end }}
+
+<!-- scripts -->
+{{ define "scripts" }}{{ end }}
+
+<!-- body -->
+{{ define "body" }} {{ $navBgColor := "bg-gray-800"}}
+<div class="sm:px-4">
+  <div class="max-w-5xl mx-auto relative">
+    <!-- desktop nav -->
+    <aside
+      id="contents-pane"
+      class="hidden md:block md:fixed w-[15rem] lg:w-[18rem] inset-0 top-[5.3rem] left-[max(1rem,calc(50%-32rem))] right-auto overflow-y-auto rounded-lg text-gray-400 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-r-lg [&::-webkit-scrollbar-track]:{{ $navBgColor }} [&::-webkit-scrollbar-thumb]:rounded [&::-webkit-scrollbar-thumb]:bg-gray-600"
+    >
+      <nav class="{{ $navBgColor }} rounded-lg p-4 text-sm lg:text-base">
+        {{ template "doc-nav-items" . }}
+      </nav>
+    </aside>
+    <div class="md:pl-[15rem] lg:pl-[18rem] mt-5">
+      <!-- mobile nav -->
+      <div
+        class="mx-4 sm:mx-0 md:hidden rounded-lg {{ $navBgColor }} text-gray-300 p-4 mb-4"
+      >
+        <div class="flex gap-4 items-center">
+          <button
+            id="docs-nav-mobile-toggle"
+            class="transition hover:text-white"
+            aria-label="Docs nav menu toggle"
+            aria-expanded="false"
+          >
+            {{ inlineSVG "public/icons/burger.svg" "w-auto h-8" }}
+          </button>
+          <p class="truncate">
+            <span class="font-semibold">{{ .Data.Section }}</span> / {{
+            .Data.Title }}
+          </p>
+        </div>
+        <nav id="docs-nav-mobile-menu" class="mt-4 hidden">
+          {{ template "doc-nav-items" . }}
+        </nav>
+      </div>
+      <div
+        class="md:ml-4 bg-light bg-gradient-to-br from-light from-10% via-pink/10 to-yellow/10 px-4 py-8 rounded-lg"
+      >
+        <p class="hidden md:block text-gray-600 mb-4">{{ .Data.Section }} /</p>
+        <article class="prose">{{ .Data.Content }}</article>
+        <hr class="my-8" />
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            {{ if .Data.Previous}}
+            <a
+              href="{{ .Data.Previous.Path }}"
+              class="block transition h-full text-sm sm:text-lg border-2 rounded-lg border-gray-300 hover:border-cyan-dark hover:shadow-solid p-4"
+            >
+              <p class="text-gray-600 text-xs sm:text-sm">← Previous</p>
+              {{ .Data.Previous.Title }}
+            </a>
+            {{ end }}
+          </div>
+          <div>
+            {{ if .Data.Next}}
+            <a
+              href="{{ .Data.Next.Path }}"
+              class="block transition h-full text-sm sm:text-lg border-2 rounded-lg border-gray-300 hover:border-pink hover:shadow-solid p-4 text-right"
+            >
+              <p class="text-gray-600 text-xs sm:text-sm">Next →</p>
+              {{ .Data.Next.Title }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ template "footer" }}
+    </div>
+  </div>
+</div>
+<!-- get and set to maintain scroll position -->
+<script>
+  (function () {
+    try {
+      const docsPane = document.getElementById("contents-pane");
+      const key = "leftPanelScroll";
+      window.addEventListener("beforeunload", () => {
+        sessionStorage.setItem(key, docsPane.scrollTop);
+      });
+      const previousPosition = sessionStorage.getItem(key);
+      if (previousPosition) {
+        docsPane.scrollTop = previousPosition;
+      }
+    } catch {}
+  })();
+</script>
+{{ end }}
+
+<!-- docs nav items -->
+{{ define "doc-nav-items"}} {{ $currentPage := .Data.Title }} {{ range
+.PageData.DocsSections }}
+<span class="font-bold text-gray-200">{{ .Label }}</span>
+<ul class="space-y-3 my-4 border-l border-gray-700">
+  {{ range .Items }}
+  <li class="pl-2">
+    {{ if eq $currentPage .Label }}
+    <span
+      class="bg-clip-text text-transparent bg-gradient-to-r from-yellow to-pink font-bold"
+      >› {{ .Label }}</span
+    >
+    {{ else}}
+    <a class="transition hover:text-white" href="{{ .Path }}">{{ .Label }}</a>
+    {{ end }}
+  </li>
+  {{ end}}
+</ul>
+{{ end }} {{ end }}

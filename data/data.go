@@ -9,19 +9,24 @@ import (
 
 type viewData struct {
 	Homepage homepageView
-	PageData PageData
+	DocPages []*docPage
+	PageData *PageData
 }
 
 type PageData struct {
-	Links Links
+	Links        Links
+	DocsSections []docsSection
 }
 
 func New() *viewData {
-	pd := PageData{
-		Links: getLinksView(),
+	docs := parseDocs()
+	pd := &PageData{
+		Links:        getLinksView(),
+		DocsSections: docs.Sections,
 	}
 	d := &viewData{
 		Homepage: getHomepageView(),
+		DocPages: docs.Pages,
 		PageData: pd,
 	}
 	return d

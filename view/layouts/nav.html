@@ -1,6 +1,6 @@
 {{ define "nav" }}
 <div
-  class="sticky top-0 px-4 bg-dark sm:bg-dark/80 text-gray-400 sm:backdrop-blur rounded-b-lg z-50"
+  class="sticky top-0 px-4 border-b border-gray-700 bg-dark sm:bg-dark/80 text-gray-400 sm:backdrop-blur rounded-b-lg z-50"
 >
   <nav class="max-w-5xl mx-auto py-2 transition-all">
     <div class="flex items-center justify-between gap-4">
@@ -33,18 +33,17 @@
         {{ inlineSVG "public/icons/burger.svg" "w-auto h-10" }}
       </button>
     </div>
-    <div
-      id="nav-menu"
-      class="hidden flex-col sm:hidden items-center py-4 gap-4 text-lg"
-    >
-      {{ range .Nav }} {{ $link := index $.Urls .Key}}
-      <a
-        class="transition hover:text-white p-4"
-        href="{{ $link.Url }}"
-        target="{{ $link.Target }}"
-        >{{ .Label }}</a
-      >
-      {{ end }}
+    <div id="nav-menu" class="hidden sm:hidden items-center py-4 text-lg">
+      <nav class="flex flex-col gap-4 items-center">
+        {{ range .Nav }} {{ $link := index $.Urls .Key}}
+        <a
+          class="transition hover:text-white p-4"
+          href="{{ $link.Url }}"
+          target="{{ $link.Target }}"
+          >{{ .Label }}</a
+        >
+        {{ end }}
+      </nav>
     </div>
   </nav>
 </div>
