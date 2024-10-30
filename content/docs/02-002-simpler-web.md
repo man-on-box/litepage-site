@@ -17,7 +17,7 @@ Choosing a framework for your project is a bit like getting into a relationship.
 
 If I could sketch this scenario in a chart, it would look something like:
 
-![Image of productivity vs tech debt over time](/img/with-frameworks.webp)
+<img class="max-h-96 mx-auto" src="/img/prod-chart-light.svg" alt="Image of productivity vs tech debt over time">
 
 By comparison, languages evolve and change at a much _slower_ rate, and should be a solid foundation to build on top of. I love [Go](https://go.dev/) for its simplicity and comprehensive standard library with built in HTML templating and web server.
 
