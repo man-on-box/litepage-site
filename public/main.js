@@ -9,6 +9,7 @@
       return;
     }
 
+    const navIcon = navBtn.getElementsByClassName("toggle-icon")[0];
     const navLinks = navMenu.querySelectorAll("a");
     let expanded = false;
 
@@ -22,7 +23,9 @@
       navMenu.classList.toggle("block");
       navMenu.setAttribute("aria-hidden", !expanded);
       navBtn.setAttribute("aria-expanded", expanded);
-      navBtn.classList.toggle("rotate-90");
+      if (navIcon) {
+        navIcon.classList.toggle("rotate-90");
+      }
 
       navLinks.forEach((link) => {
         link.tabIndex = expanded ? 0 : -1;
