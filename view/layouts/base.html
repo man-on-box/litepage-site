@@ -26,8 +26,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/litepage.svg" />
-  <link href="/main.css?v={{ version }}" rel="stylesheet" />
   <title>{{ template "title" . }}</title>
+  <link rel="preload" href="/litepage.svg" as="image" type="image/svg+xml" />
+  <link href="/main.css?v={{ version }}" rel="stylesheet" />
+  <script defer src="/main.js?v={{version}}"></script>
+  {{ template "scripts" }}
+  <!-- meta tags -->
   <meta name="description" content='{{ template "meta-description" . }}' />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://litepage.dev" />
@@ -45,8 +49,6 @@
     content='{{ template "meta-description" . }}'
   />
   <meta property="twitter:image" content="https://manonbox.io/img/social.png" />
-  <script defer src="/main.js?v={{version}}"></script>
-  {{ template "scripts" }}
 </head>
 {{ end }}
 
