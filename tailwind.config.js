@@ -23,6 +23,37 @@ module.exports = {
       boxShadow: {
         solid: "6px 6px 0 rgba(0, 0, 0, 0.25)",
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            code: {
+              borderRadius: theme("borderRadius.sm"),
+              backgroundColor: theme("colors.gray.300"),
+              color: theme("colors.gray.900"),
+              fontWeight: "normal",
+              padding: theme("spacing.1"),
+            },
+            "code::before": {
+              content: "",
+            },
+            "code::after": {
+              content: "",
+            },
+            blockQuote: {
+              border: "solid",
+              borderRadius: theme("borderRadius.lg"),
+              borderColor: theme("colors.yellow"),
+              fontStyle: "normal",
+            },
+            "blockquote p:first-of-type::before": {
+              content: "",
+            },
+            "blockquote p:last-of-type::after": {
+              content: "",
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],

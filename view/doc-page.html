@@ -54,7 +54,11 @@
         class="md:ml-4 bg-light bg-gradient-to-br from-light from-10% via-pink/10 to-yellow/10 px-4 pb-4 pt-8 md:pt-4 rounded-lg"
       >
         <p class="hidden md:block text-gray-600 mb-4">{{ .Data.Section }} /</p>
-        <article class="prose">{{ .Data.Content }}</article>
+        <article
+          class="prose lg:prose-lg hover:prose-a:text-pink prose-blockquote:bg-yellow/15"
+        >
+          {{ .Data.Content }}
+        </article>
         <hr class="my-8" />
         <div class="grid grid-cols-2 gap-4">
           <div>

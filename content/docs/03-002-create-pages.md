@@ -19,7 +19,7 @@ err := lp.Page("/index.html", func (w io.Writer) {
 })
 ```
 
-_**Note:** Paths must start with a forward slash `/`, include a file extension and be a valid filepath._
+> **Note:** Paths must start with a forward slash `/`, include a file extension and be a valid filepath.
 
 Here you also pass a function that receives the standard `io.Writer` interface. Write your templates to this interface to generate your pages with your content.
 
