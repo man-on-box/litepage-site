@@ -25,26 +25,27 @@
       <div
         class="mx-4 sm:mx-0 md:hidden rounded-lg {{ $navBgColor }} text-gray-300 p-4 mb-4"
       >
-        <div class="flex gap-4 items-center">
-          <button
-            id="docs-nav-mobile-toggle"
-            class="transition hover:text-white"
-            aria-label="Docs nav menu toggle"
-            aria-expanded="false"
-          >
-            {{ inlineSVG "public/icons/burger.svg" "w-auto h-8" }}
-          </button>
+        <button
+          id="docs-nav-mobile-toggle"
+          class="flex gap-2 items-center transition"
+          aria-label="Docs nav menu toggle"
+          aria-expanded="false"
+          aria-controls="docs-nav-mobile-menu"
+        >
+          <span class="toggle-icon transition">
+            {{ inlineSVG "public/icons/chevron-right.svg" "w-auto h-5" }}
+          </span>
           <p class="truncate">
             <span class="font-semibold">{{ .Data.Section }}</span> / {{
             .Data.Title }}
           </p>
-        </div>
+        </button>
         <nav id="docs-nav-mobile-menu" class="mt-4 hidden">
           {{ template "doc-nav-items" . }}
         </nav>
       </div>
       <div
-        class="md:ml-4 bg-light bg-gradient-to-br from-light from-10% via-pink/10 to-yellow/10 px-4 py-8 rounded-lg"
+        class="md:ml-4 bg-light bg-gradient-to-br from-light from-10% via-pink/10 to-yellow/10 px-4 pb-4 pt-8 md:pt-4 rounded-lg"
       >
         <p class="hidden md:block text-gray-600 mb-4">{{ .Data.Section }} /</p>
         <article class="prose">{{ .Data.Content }}</article>
