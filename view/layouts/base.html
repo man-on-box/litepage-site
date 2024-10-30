@@ -29,7 +29,7 @@
   <link rel="preload" href="/litepage.svg" as="image" type="image/svg+xml" />
   <link href="/main.css?v={{ version }}" rel="stylesheet" />
   <script defer src="/main.js?v={{version}}"></script>
-  {{ template "scripts" }}
+  {{ template "scripts" . }}
   <!-- meta tags -->
   <meta name="description" content='{{ template "meta-description" . }}' />
   <meta property="og:type" content="website" />

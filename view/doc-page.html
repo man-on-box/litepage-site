@@ -5,7 +5,13 @@
 {{ define "meta-description" }}{{ .Data.Description }}{{ end }}
 
 <!-- scripts -->
-{{ define "scripts" }}{{ end }}
+{{ define "scripts" }}
+<link rel="prefetch" href="/" />
+{{ if .Data.Previous }}
+<link rel="prefetch" href="{{ .Data.Previous.Path }}/" />
+{{ end }} {{ if .Data.Next }}
+<link rel="prefetch" href="{{ .Data.Next.Path }}/" />
+{{ end }} {{ end }}
 
 <!-- body -->
 {{ define "body" }} {{ $navBgColor := "bg-gray-800"}}
