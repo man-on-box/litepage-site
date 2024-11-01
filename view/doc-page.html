@@ -8,9 +8,9 @@
 {{ define "scripts" }}
 <link rel="prefetch" href="/" />
 {{ if .Data.Previous }}
-<link rel="prefetch" href="{{ .Data.Previous.Path }}/" />
+<link rel="prefetch" href="{{ .Data.Previous.Path }}" />
 {{ end }} {{ if .Data.Next }}
-<link rel="prefetch" href="{{ .Data.Next.Path }}/" />
+<link rel="prefetch" href="{{ .Data.Next.Path }}" />
 {{ end }} {{ end }}
 
 <!-- body -->
