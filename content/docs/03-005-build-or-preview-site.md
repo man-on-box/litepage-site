@@ -48,3 +48,9 @@ dev:
 	# hot reloading proxy like 'air'
 	LP_MODE=serve LP_PORT=3001 air
 ```
+
+## Conclusion
+
+You are ready to start building your static sites, ready to deploy somewhere. You don't need to worry about how to create your files, or preview them. Just focus on building a site to match your needs.
+
+Happy coding!

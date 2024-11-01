@@ -15,9 +15,13 @@ These are not hard requirements as you can learn as you go, but they are recomme
 - Basic knowledge of Go [HTML templating](https://pkg.go.dev/html/template)
 - Knowledge of HTML, CSS, JS (no ready-made templates here)
 
-## Installation
+## Bootstrap a new project
 
-Add Litepage package to your project. There are no CLI's to use or config files setup.
+Right now we are **building a CLI** that can bootstrap a new project for you, with some basic optional configuration such as with Markdown or Tailwind CSS support. This isn't ready yet, so for now you can add the library manually to a new or existing project.
+
+## Add to new/existing project
+
+Add Litepage package to your project as you would any other package.
 
 ```bash
 
