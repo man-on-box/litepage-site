@@ -1,13 +1,14 @@
 package data
 
 type homepageView struct {
-	Title           string        `json:"title"`
-	Heading         string        `json:"heading"`
-	Subheading      string        `json:"subheading"`
-	Ctas            []ctaItem     `json:"ctas"`
-	Taglines        []taglineItem `json:"taglines"`
-	SnippetsHeading string        `json:"snippetsHeading"`
-	Snippets        []snippetItem `json:"snippets"`
+	Title              string        `json:"title"`
+	Heading            string        `json:"heading"`
+	Subheading         string        `json:"subheading"`
+	Ctas               []ctaItem     `json:"ctas"`
+	Taglines           []taglineItem `json:"taglines"`
+	SnippetsHeading    string        `json:"snippetsHeading"`
+	SnippetsSubheading string        `json:"snippetsSubheading"`
+	Snippets           []snippetItem `json:"snippets"`
 }
 
 type ctaItem struct {

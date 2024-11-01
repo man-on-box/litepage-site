@@ -27,6 +27,7 @@
     }
   ],
   "snippetsHeading": "Static sites made simple.",
+  "snippetsSubheading": "Build static sites the way you want, while keeping your stack lean.",
   "snippets": [
     {
       "heading": "Declaratively create your pages",

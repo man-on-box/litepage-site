@@ -27,7 +27,7 @@ Litepage does not include any live reloading out of the box. There are live relo
 
 While it is not as instant as hot reloading a JS project with [Vite](https://vite.dev/), it is fast enough to offer a nice development experience.
 
-## Smart routing
+## Route matching
 
 Routing is handled for you to match those of static hosting providers. Take the following example site with three pages:
 
@@ -55,7 +55,7 @@ lp.Page("/foo.html", func (w io.Writer) {
 err := lp.Serve("3000")
 ```
 
-You can reach these pages with any of the following paths.
+You can reach these pages with a `200` response at any of the following paths.
 
 **`/index.html` page**:
 

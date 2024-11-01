@@ -41,6 +41,8 @@ module.exports = {
             },
             blockQuote: {
               border: "solid",
+              borderWidth: "2px",
+              borderStyle: "dashed",
               borderRadius: theme("borderRadius.lg"),
               borderColor: theme("colors.yellow"),
               fontStyle: "normal",
