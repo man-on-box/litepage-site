@@ -5,7 +5,7 @@ section: Methods and usage
 description: Learn about Litepage methods and their usage
 ---
 
-# Litepage Methods and usage
+# Litepage methods and usage
 
 We've taken a look at a basic example, now lets go through each method and their use cases.
 
