@@ -33,18 +33,20 @@
       >
         <button
           id="docs-nav-mobile-toggle"
-          class="flex gap-2 items-center transition"
+          class="block w-full transition"
           aria-label="Docs nav menu toggle"
           aria-expanded="false"
           aria-controls="docs-nav-mobile-menu"
         >
-          <span class="toggle-icon transition">
-            {{ inlineSVG "public/icons/chevron-right.svg" "w-auto h-5" }}
-          </span>
-          <p class="truncate">
-            <span class="font-semibold">{{ .Data.Section }}</span> / {{
-            .Data.Title }}
-          </p>
+          <div class="flex gap-2 items-center">
+            <span class="toggle-icon transition">
+              {{ inlineSVG "public/icons/chevron-right.svg" "w-auto h-5" }}
+            </span>
+            <p class="truncate">
+              <span class="font-semibold">{{ .Data.Section }}</span>
+              / {{ .Data.Title }}
+            </p>
+          </div>
         </button>
         <nav id="docs-nav-mobile-menu" class="mt-4 hidden">
           {{ template "doc-nav-items" . }}
