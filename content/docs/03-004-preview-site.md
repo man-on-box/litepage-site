@@ -74,5 +74,4 @@ You can reach these pages with a `200` response at any of the following paths.
 **`/foo.html` page**:
 
 - http://localhost:3000/foo
-- http://localhost:3000/foo/
 - http://localhost:3000/foo.html
