@@ -24,9 +24,7 @@ Right now we are **building a CLI** that can bootstrap a new project for you, wi
 Add Litepage package to your project as you would any other package.
 
 ```bash
-
 go get github.com/man-on-box/litepage
-
 ```
 
 ## Project structure
