@@ -14,9 +14,7 @@ We've taken a look at a basic example, now lets go through each method and their
 Create a new Litepage instance with `New` and passing your domain name, where the site will be accessed from.
 
 ```go
-
 lp, err := litepage.New("hello-world.com")
-
 ```
 
 The domain is used when building the sitemap, to make sure we can create fully qualified URLs.
