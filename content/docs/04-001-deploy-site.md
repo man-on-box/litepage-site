@@ -24,7 +24,7 @@ Once you have built your site, you need to deploy it somewhere. It should be pos
 1. Login to the [Cloudflare dashboard](https://dash.cloudflare.com/) and select your account
 1. Select **Workers & Pages** > **Create** > **Pages** > **Connect to Git**
 
-Here you will be prompted to sign in with your Git provider. Once connected, select the repository that contains your static siteproject and click **Begin Setup**
+Here you will be prompted to sign in with your Git provider. Once connected, select the repository that contains your static siteproject and click **Begin Setup**.
 
 Once connected, it is as simple as selecting your build command to build your project and site (e.g. `make build` or `go run main.go`), and the build output directory (which by default is `/dist`).
 
