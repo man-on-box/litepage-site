@@ -14,8 +14,6 @@ Once you have built your site, you need to deploy it somewhere. It should be pos
 - [Cloudflare Pages](#cloudflare-pages)
 - [GitHub Pages](#github-pages)
 
-<div id="cloudflare-pages">
-
 ## Cloudflare Pages
 
 [Cloudflare Pages](https://developers.cloudflare.com/pages/get-started/git-integration/) offers an easy way to deploy your static sites, with preview deployments and basic analytics out of the box.
@@ -30,9 +28,6 @@ Once connected, it is as simple as selecting your build command to build your pr
 
 From here you can deploy your site everytime you commit to your main branch, as well as get automatic preview URLs when pushing up new branches and pull requests. You can [read their docs](https://developers.cloudflare.com/pages/) for more information.
 
-</div>
-<div id="github-pages">
-
 ## GitHub Pages
 
 GitHub Pages allows you to host your static site straight from GitHub. This is convenient especially if you are already using GitHub to put your project. We can leverage [GitHub Actions](https://github.com/features/actions) to build and deploy your site automatically.
@@ -42,4 +37,3 @@ GitHub Pages allows you to host your static site straight from GitHub. This is c
 1. Once created, [follow their guide](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow) to set the publishing source to GitHub Actions.
 
 1. When doing this, GitHub will [suggest a workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#creating-a-custom-github-actions-workflow-to-publish-your-site) to build and publish your site. You can also use this [GitHub workflow](https://github.com/man-on-box/man-on-box.github.io/blob/main/.github/workflows/deploy-site.yaml) as a template to build and deploy with Tailwind also.
-</div>
