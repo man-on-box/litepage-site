@@ -108,6 +108,9 @@ var mdParser = goldmark.New(
 	goldmark.WithRendererOptions(
 		html.WithUnsafe(),
 	),
+	goldmark.WithParserOptions(
+		parser.WithAutoHeadingID(),
+	),
 	goldmark.WithExtensions(
 		&frontmatter.Extender{},
 		highlighting.NewHighlighting(
