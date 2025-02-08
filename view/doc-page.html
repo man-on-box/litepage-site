@@ -20,7 +20,7 @@
     <!-- desktop nav -->
     <aside
       id="contents-pane"
-      class="hidden md:block md:fixed w-[15rem] lg:w-[18rem] inset-0 top-[5.3rem] left-[max(1rem,calc(50%-32rem))] right-auto overflow-y-auto rounded-lg text-gray-400 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-r-lg [&::-webkit-scrollbar-track]:bg-gray-800 [&::-webkit-scrollbar-thumb]:rounded [&::-webkit-scrollbar-thumb]:bg-gray-600"
+      class="hidden md:block md:fixed w-[15rem] lg:w-[18rem] inset-0 top-[5.3rem] left-[max(1rem,calc(50%-32rem))] right-auto overflow-y-auto rounded-lg text-gray-400 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-r-lg [&::-webkit-scrollbar-track]:bg-gray-800 [&::-webkit-scrollbar-thumb]:rounded-sm [&::-webkit-scrollbar-thumb]:bg-gray-600"
     >
       <nav class="{{ $navBgColor }} rounded-lg p-4 text-sm lg:text-base">
         {{ template "doc-nav-items" . }}
@@ -53,15 +53,15 @@
         </nav>
       </div>
       <div
-        class="md:ml-4 bg-light bg-gradient-to-br from-light from-10% via-pink/10 to-yellow/10 px-4 pb-4 pt-8 md:pt-4 rounded-lg"
+        class="md:ml-4 bg-light bg-linear-to-br from-light from-10% via-pink/10 to-yellow/10 px-4 pb-4 pt-8 md:pt-4 rounded-lg"
       >
         <p class="hidden md:block text-gray-600 mb-4">{{ .Data.Section }} /</p>
         <article
-          class="prose lg:prose-lg hover:prose-a:text-pink prose-blockquote:bg-yellow/15"
+          class="prose lg:prose-lg prose-a:hover:text-pink prose-blockquote:bg-yellow/15"
         >
           {{ .Data.Content }}
         </article>
-        <hr class="my-8" />
+        <hr class="my-8 border-gray-700" />
         <div class="grid grid-cols-2 gap-4">
           <div>
             {{ if .Data.Previous}}
@@ -118,7 +118,7 @@
   <li class="pl-2">
     {{ if eq $currentPage .Label }}
     <span
-      class="bg-clip-text text-transparent bg-gradient-to-r from-yellow to-pink font-bold"
+      class="bg-clip-text text-transparent bg-linear-to-r from-yellow to-pink font-bold"
       >› {{ .Label }}</span
     >
     {{ else}}

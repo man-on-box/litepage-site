@@ -42,7 +42,7 @@
   </div>
 </div>
 <div
-  class="bg-light text-dark bg-gradient-to-br from-light from-10% via-cyan/10 to-yellow/10 max-w-5xl mx-auto rounded-2xl px-4 sm:px-8 py-10 pattern-zigzag-3d pattern-blue-500 pattern-bg-white pattern-size-6 pattern-opacity-20"
+  class="bg-light text-dark bg-linear-to-br from-light from-10% via-cyan/10 to-yellow/10 max-w-5xl mx-auto rounded-2xl px-4 sm:px-8 py-10 pattern-zigzag-3d pattern-blue-500 pattern-bg-white pattern-size-6 pattern-opacity-20"
 >
   <div class="max-w-4xl mx-auto">
     <h2 class="text-2xl font-bold">{{ .Data.SnippetsHeading }}</h2>
@@ -55,7 +55,7 @@
         <h3 class="font-bold text-lg">{{ .Heading}}</h3>
         <p class="my-5">{{ .Description }}</p>
         <pre
-          class="border border-dashed rounded p-5 my-5 text-xs overflow-x-auto bg-white {{ if eq .ColSpan 2 }}border-pink{{ else }}border-cyan{{ end }}"
+          class="border border-dashed rounded-sm p-5 my-5 text-xs overflow-x-auto bg-white {{ if eq .ColSpan 2 }}border-pink{{ else }}border-cyan{{ end }}"
         >
 {{ .Snippet }}</pre
         >
@@ -90,10 +90,10 @@
   </div>
   <div class="py-24 sm:py-20 relative w-[42ch] lg:w-[45ch]">
     <div
-      class="absolute -z-20 top-0 w-3/4 h-full rounded-full blur-3xl bg-gradient-to-r from-pink to-cyan opacity-30 rotate-6"
+      class="absolute -z-20 top-0 w-3/4 h-full rounded-full blur-3xl bg-linear-to-r from-pink to-cyan opacity-30 rotate-6"
     ></div>
     <h1
-      class="text-5xl sm:text-[2.7rem] lg:text-[3.2rem] text-center leading-tight lg:leading-tight sm:text-left font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
+      class="text-5xl sm:text-[2.7rem] lg:text-[3.2rem] text-center leading-tight lg:leading-tight sm:text-left font-semibold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-300"
     >
       {{ . }}
     </h1>
