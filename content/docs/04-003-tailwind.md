@@ -18,8 +18,6 @@ Note that even though Tailwind does provide a [standalone executable](https://ta
 1. [npm init](https://docs.npmjs.com/cli/v6/commands/npm-init) your project (if you do not yet have a `package.json` file)
 1. Run through the Tailwind [installation guide](https://tailwindcss.com/docs/installation)
 
-Once setup, ensure you have configured your template paths to point to your HTML templates directory, and anywhere else you might specify class names that you want Tailwind to pickup (e.g. in your Markdown content).
-
 ## Usage
 
 Now with Tailwind setup, you just need to ensure you run Tailwind **every time** you build your Go project. This ensures your CSS and outputted HTML stay in sync.
@@ -30,16 +28,16 @@ Take the below Makefile for example:
 build:
 	@echo "Building for prod"
 	@go run cmd/main.go
-	@npx tailwind -i ./style/main.css -o ./dist/main.css --minify
+	@npx @tailwindcss/cli -i ./style/main.css -o ./dist/main.css --minify
 
 serve:
-	@npx tailwind -i ./style/main.css -o ./public/main.css & \
+	@npx @tailwindcss/cli -i ./style/main.css -o ./public/main.css & \
 		LP_MODE=serve go run cmd/main.go
 
 dev:
 	@echo "Starting dev mode"
 	@LP_MODE=serve LP_PORT=3001 air & \
-		npx tailwind -i ./style/main.css -o ./public/main.css --watch
+		npx @tailwindcss/cli -i ./style/main.css -o ./public/main.css --watch
 ```
 
 - `build`: We are building the site and CSS with Tailwind for production. We ensure the output destination is the dist directory and also minifying the outputted CSS.
