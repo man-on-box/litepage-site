@@ -33,9 +33,10 @@
   >
     {{ range .Data.Taglines }}
     <div
-      class="flex items-center gap-5 p-5 text-lg rounded-lg font-light border-2 border-pink border-dashed shadow-2xl shadow-pink/20 text-white"
+      class="group flex items-center gap-5 p-5 text-lg rounded-lg font-light border-2 border-pink border-dashed shadow-2xl shadow-pink/20 text-white hover:border-cyan hover:shadow-cyan/40 hover:border-solid transition"
     >
-      {{ inlineSVG .Icon "shrink-0 w-auto h-10 stroke-pink" }}
+      {{ inlineSVG .Icon (print "shrink-0 w-auto h-10 stroke-pink "
+      "group-hover:stroke-cyan transition") }}
       <p>{{ .Text }}</p>
     </div>
     {{ end }}
