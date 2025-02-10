@@ -90,7 +90,8 @@ func inlineSVG(filename string, className ...string) template.HTML {
 	svg := string(content)
 
 	if len(className) > 0 {
-		svg = strings.Replace(svg, "<svg", `<svg class="`+className[0]+`"`, 1)
+		classes := strings.Join(className, " ")
+		svg = strings.Replace(svg, "<svg", `<svg class="`+classes+`"`, 1)
 	}
 
 	return template.HTML(svg)
