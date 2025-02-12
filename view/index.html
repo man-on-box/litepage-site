@@ -33,7 +33,7 @@
   >
     {{ range .Data.Taglines }}
     <div
-      class="group flex items-center gap-5 p-5 text-lg rounded-lg font-light border-2 border-pink border-dashed shadow-2xl shadow-pink/20 text-white hover:border-cyan hover:shadow-cyan/40 hover:border-solid transition"
+      class="element-fade-in group flex items-center gap-5 p-5 text-lg rounded-lg font-light border-2 border-pink border-dashed shadow-2xl shadow-pink/20 text-white hover:border-cyan hover:shadow-cyan/40 hover:border-solid transition"
     >
       {{ inlineSVG .Icon "shrink-0" "w-auto" "h-10" "stroke-pink" "transition"
       "group-hover:stroke-cyan" "group-hover:-translate-y-1" }}
@@ -51,7 +51,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-3 gap-8 my-10">
       {{ range .Data.Snippets }}
       <div
-        class="p-5 border-2 rounded-xl shadow-solid {{ if eq .ColSpan 2 }}sm:col-span-4 lg:col-span-2 border-pink shadow-pink bg-pink/15{{ else }}sm:col-span-2 lg:col-span-1 border-cyan shadow-cyan-dark bg-cyan/15{{ end }}"
+        class="element-fade-in p-5 border-2 rounded-xl shadow-solid {{ if eq .ColSpan 2 }}sm:col-span-4 lg:col-span-2 border-pink shadow-pink bg-pink/15{{ else }}sm:col-span-2 lg:col-span-1 border-cyan shadow-cyan-dark bg-cyan/15{{ end }}"
       >
         <h3 class="font-bold text-lg">{{ .Heading}}</h3>
         <p class="my-5">{{ .Description }}</p>
@@ -64,7 +64,7 @@
       {{ end }}
     </div>
     <div
-      class="border-2 rounded-xl shadow-solid border-yellow shadow-yellow bg-yellow/15"
+      class="element-fade-in border-2 rounded-xl shadow-solid border-yellow shadow-yellow bg-yellow/15"
     >
       <div class="my-20 flex flex-col gap-5">
         <h3 class="text-center font-bold text-lg">Ready to learn more?</h3>
