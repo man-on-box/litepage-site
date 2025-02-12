@@ -44,13 +44,13 @@
         const element = entry.target;
         if (!entry.isIntersecting && !element.dataset.animated) {
           element.classList.add("opacity-10");
-          element.classList.add("-translate-y-10");
+          element.classList.add("translate-y-10");
           return;
         }
         element.dataset.animated = "true";
         setTimeout(() => {
           element.classList.remove("opacity-10");
-          element.classList.remove("-translate-y-10");
+          element.classList.remove("translate-y-10");
         }, i * 150);
       });
     },
@@ -61,7 +61,7 @@
   );
   Array.from(elements).forEach((element) => {
     element.classList.add("transition");
-    element.classList.add("duration-700");
+    element.classList.add("duration-800");
     intersectionObserver.observe(element);
   });
 })();
