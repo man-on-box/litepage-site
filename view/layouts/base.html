@@ -3,7 +3,7 @@
 <html lang="en">
   {{ template "head" . }}
   <body
-    class="antialiased bg-dark bg-[url(/img/waves.svg)] bg-bottom bg-no-repeat"
+    class="antialiased bg-dark bg-none sm:bg-[url(/img/waves.svg)] bg-bottom bg-no-repeat"
   >
     {{ template "nav" .PageData.Links }} {{ template "body" .}} {{ template
     "footer" }}
@@ -17,7 +17,7 @@
 <html lang="en">
   {{ template "head" . }}
   <body
-    class="antialiased bg-dark bg-[url(/img/waves.svg)] bg-bottom bg-no-repeat"
+    class="antialiased bg-dark bg-none sm:bg-[url(/img/waves.svg)] bg-bottom bg-no-repeat"
   >
     {{ template "nav" .PageData.Links }} {{ template "body" .}}
   </body>
@@ -80,7 +80,7 @@
 {{ define "footer" }}
 <footer class="mx-auto px-4 flex items-center gap-4">
   <div class="max-w-5xl mx-auto py-10">
-    <p class="font-light text-center text-sm text-gray-800">
+    <p class="font-light text-center text-sm text-gray-400 sm:text-gray-800">
       MIT License © {{ currentYear }} · Litepage
     </p>
   </div>
