@@ -9,5 +9,7 @@ serve:
 
 build:
 	@echo "Building for prod"
+	go fmt ./...
+	go vet ./...
 	@go run cmd/main.go
 	@npx @tailwindcss/cli -i ./style/main.css -o ./dist/main.css --minify
