@@ -39,25 +39,10 @@
   const elements = document.querySelectorAll("[data-fade-in]");
   if (elements.length === 0) return;
   const staggerDelay = 150;
-  const animateEntry = (entry, index) => {
-    const element = entry.target;
-    if (element.dataset.animated) {
-      return;
-    }
-    if (!entry.isIntersecting) {
-      element.classList.add("opacity-10");
-      element.classList.add("translate-y-10");
-      return;
-    }
-    element.dataset.animated = "true";
-    setTimeout(() => {
-      element.classList.remove("opacity-10");
-      element.classList.remove("translate-y-10");
-    }, index * staggerDelay);
-  };
+  const duration = 800;
   const intersectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(animateEntry);
+    (entries, observer) => {
+      entries.forEach((entry, i) => animateEntry(entry, i, observer));
     },
     {
       root: null,
@@ -69,4 +54,24 @@
     element.classList.add("duration-800");
     intersectionObserver.observe(element);
   });
+  const animateEntry = (entry, index, observer) => {
+    const element = entry.target;
+    if (!entry.isIntersecting) {
+      element.classList.add("opacity-10");
+      element.classList.add("translate-y-10");
+      return;
+    }
+    observer.unobserve(element);
+    setTimeout(() => {
+      element.classList.remove("opacity-10");
+      element.classList.remove("translate-y-10");
+      removeTransitionAfterAnimated(element);
+    }, index * staggerDelay);
+  };
+  const removeTransitionAfterAnimated = (element) => {
+    setTimeout(() => {
+      element.classList.remove("transition");
+      element.classList.remove("duration-800");
+    }, duration);
+  };
 })();
