@@ -57,13 +57,13 @@
   const animateEntry = (entry, index, observer) => {
     const element = entry.target;
     if (!entry.isIntersecting) {
-      element.classList.add("opacity-10");
+      element.classList.add("opacity-0");
       element.classList.add("translate-y-10");
       return;
     }
     observer.unobserve(element);
     setTimeout(() => {
-      element.classList.remove("opacity-10");
+      element.classList.remove("opacity-0");
       element.classList.remove("translate-y-10");
       removeTransitionAfterAnimated(element);
     }, index * staggerDelay);
