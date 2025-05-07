@@ -14,15 +14,15 @@
   ],
   "taglines": [
     {
-      "icon": "public/icons/cpu.svg",
+      "icon": "assets/icons/cpu.svg",
       "text": "Works with any static site hosting provider"
     },
     {
-      "icon": "public/icons/puzzle.svg",
+      "icon": "assets/icons/puzzle.svg",
       "text": "Easy integration with minimal footprint"
     },
     {
-      "icon": "public/icons/zap.svg",
+      "icon": "assets/icons/zap.svg",
       "text": "Contains zero additional dependencies"
     }
   ],
