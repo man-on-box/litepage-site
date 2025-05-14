@@ -3,7 +3,7 @@ module github.com/man-on-box/litepage-site
 go 1.22.6
 
 require (
-	github.com/man-on-box/litepage v0.1.5
+	github.com/man-on-box/litepage v0.2.1
 	github.com/yuin/goldmark v1.7.8
 	github.com/yuin/goldmark-highlighting/v2 v2.0.0-20230729083705-37449abec8cc
 	go.abhg.dev/goldmark/frontmatter v0.2.0
