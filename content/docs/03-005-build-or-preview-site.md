@@ -1,11 +1,11 @@
 ---
 slug: build-or-preview-site
-title: Build or preview
+title: Preview locally, build on CI
 section: Methods and usage
 description: Learn about Litepage methods and their usage
 ---
 
-# Build or preview
+# Preview locally, build on CI
 
 We've seen the `Build` and `Serve` methods. Both methods explicitly build or serve your site respectively.
 
@@ -26,7 +26,7 @@ By default, this will **build** your site as if you had called the `Build` metho
 The following environment variables are checked when calling this method:
 
 - `LP_MODE` - set this to `serve` to serve your site
-- `LP_PORT` - set this to customise the port to serve your site on (default '3000')
+- `LP_PORT` - set this to customise the port to serve your site on (default port is `3000`)
 
 ## Example
 

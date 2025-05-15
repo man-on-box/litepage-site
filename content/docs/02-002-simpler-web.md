@@ -29,7 +29,7 @@ The reality is that **most of your time is spent on maintenance, not development
 
 Frameworks promise immediate productivity, and in most cases this is true. But once your site is built and done, for most of its life it will sit there accruing technical debt and security vulnerabilities.
 
-With this in mind, you can build your site with its long term life in consideration. This means **spending more time during development**, but **less time overall**. As the weeks, months and years go by, your code stays as relevant as it was when you first wrote it.
+With this in mind, you can build your site for the long term. This means **spending more time during development**, but **less time overall**. As the weeks, months and years go by, your code stays as relevant as it was when you first wrote it.
 
 ## Why Go?
 
