@@ -34,4 +34,4 @@ And no matter what background you are coming from, Litepage is for **developers 
 
 - non-developers looking to create sites without coding
 - developers looking to leverage existing templates and layouts
-- developers looking for feature rich, opinionated static site builders
+- developers looking for feature rich, opinionated frameworks or libraries

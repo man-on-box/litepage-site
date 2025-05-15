@@ -12,7 +12,7 @@
 <!-- body -->
 {{ define "body" }}
 <div class="max-w-4xl mx-auto px-4 sm:px-8">
-  {{ template "hero" .Data.Heading}}
+  {{ template "hero" .Data }}
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-10 max-w-lg mx-auto">
     {{ range $index, $cta := .Data.Ctas }} {{ $link := index
     $.PageData.Links.Urls $cta.Key}}
@@ -98,10 +98,15 @@
       class="absolute -z-20 top-0 w-3/4 h-full rounded-full blur-3xl bg-linear-to-r from-pink to-cyan opacity-30 rotate-6"
     ></div>
     <h1
-      class="text-5xl sm:text-[2.7rem] lg:text-[3.2rem] text-center leading-tight lg:leading-tight sm:text-left font-semibold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-300"
+      class="text-5xl text-underline sm:text-[2.7rem] lg:text-[3.2rem] text-center leading-tight lg:leading-tight sm:text-left font-semibold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-300"
     >
-      {{ . }}
+      {{ .Heading }}
     </h1>
+    <h2
+      class="text-2xl mt-3 text-center sm:text-left font-semibold text-gray-300"
+    >
+      {{ .Subtext }}
+    </h2>
   </div>
 </div>
 {{ end }}

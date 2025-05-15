@@ -7,6 +7,34 @@ description: Learn how Litepage aims to make building static sites simpler
 
 # Creating a simpler web
 
+If your site is serving static content with little clientside interaction, you **don't need** a server and you **don't need** a framework.
+
+The majority of websites out there are simple sites serving static content, and too many of them are hosted on servers, wasting computing power and incurring unnecessary costs.
+
+As well, it has become the norm to use frameworks that bring in _hundreds_ of dependencies, just to build and ship HTML over the web.
+
+## What about performance?
+
+Frameworks promise performance, but the best way to reach performance is to not ship bloat. A site does not inherently run _faster_ on a users machine because you used a certain framework, but it can run _slower_.
+
+The best way to give your users peformance, is to **ship the bare minimum HTML, CSS and JS required**, and follow web standards.
+
+## Your actual project life cycle.
+
+Frameworks promise immediate productivity, and in most cases this actually true. But after your site is built and done, for most of its life it just sits there accruing technical debt and security vulnerabilities.
+
+The reality is that **most of your time is spent on maintenance, not development.**
+
+With this in mind, you can build your site with its long term life in consideration. This means **spending more time during development**, but **less time overall** as the months and years go by and your code stays as relevant as it was when you first wrote it.
+
+## Why Go?
+
+So why use Golang? It's the obvious choice to build something stable and simple. With its built-in HTML templating and web server, you can go far without needing _any_ external dependencies. As well, Golang is really cool and useful language to learn, especially if you are a frontend developer.
+
+It can be tricky at first, but once you get the hang of it you can quickly start writing performant and stable web projects which require very dependencies and little maintenance once they are done.
+
+## To Delete / Old content
+
 Frameworks come and go. They evolve, they grow, they compete and they require varying degrees of knowledge to use and maintenance to keep up to date.
 
 There are a plethora of frameworks that can build static sites, my favourite being [Astro](https://astro.build/), along with [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.com/), [Jekyll](https://jekyllrb.com/docs/), [Eleventy](https://www.11ty.dev/), [Hugo](https://gohugo.io/)... and this is just the [tip of the iceberg](https://jamstack.org/generators/).

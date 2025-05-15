@@ -1,7 +1,8 @@
 {
   "title": "Litepage",
-  "heading": "A minimalist, zero dependency static site generator",
-  "subheading": "Litepage is an open source lightweight library to help build your static sites, written in Go. Designed to simplify the web.",
+  "heading": "Build sites simple.",
+  "subtext": "No magic, fewer dependencies, less maintenance, more simplicity.",
+  "subheading": "Simple sites deserve simple stacks. Litepage is an open source lightweight library to help build your static sites in Go.",
   "ctas": [
     {
       "label": "Get started",
@@ -27,11 +28,11 @@
     }
   ],
   "snippetsHeading": "Static sites made simple.",
-  "snippetsSubheading": "Build static sites the way you want, while keeping your stack lean.",
+  "snippetsSubheading": "You don't need a complex framework to build a simple site. Leverage the Go standard library to build your templates, and let Litepage build your site and provide a development environment.",
   "snippets": [
     {
       "heading": "Declaratively create your pages",
-      "description": "Pass a relative file path to create your pages.  Work with the standard io.Writer interface to support any templating library.",
+      "description": "Pass a relative file path to create your pages.  Work with the standard io.Writer interface to support any Go templating library.",
       "snippet": "lp.Page(\"/index.html\", func(w io.Writer) {\r\n  html := \"<h1>Hello, World!</h1>\"\r\n  t := template.Must(template.New(\"helloWorld\").Parse(html))\r\n  t.Execute(w, nil)\r\n})",
       "col-span": 2
     },
