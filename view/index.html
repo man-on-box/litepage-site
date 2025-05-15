@@ -49,7 +49,7 @@
 >
   <div class="max-w-4xl mx-auto">
     <h2 class="text-2xl font-bold">{{ .Data.SnippetsHeading }}</h2>
-    <p class="text text-gray-700">{{ .Data.SnippetsSubheading }}</p>
+    <p class="text mt-3 text-gray-700">{{ .Data.SnippetsSubheading }}</p>
     <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-3 gap-8 my-10">
       {{ range .Data.Snippets }}
       <div
@@ -98,7 +98,7 @@
       class="absolute -z-20 top-0 w-3/4 h-full rounded-full blur-3xl bg-linear-to-r from-pink to-cyan opacity-30 rotate-6"
     ></div>
     <h1
-      class="text-5xl text-underline sm:text-[2.7rem] lg:text-[3.2rem] text-center leading-tight lg:leading-tight sm:text-left font-semibold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-300"
+      class="text-5xl sm:text-[2.7rem] lg:text-[3.2rem] text-center leading-tight lg:leading-tight sm:text-left font-semibold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-300"
     >
       {{ .Heading }}
     </h1>
