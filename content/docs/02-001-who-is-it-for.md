@@ -32,5 +32,6 @@ And no matter what background you are coming from, Litepage is for **developers 
 ## Who Litepage is not for
 
 - non-developers looking to create sites without coding
+- developers building dynamic sites or sites with complex client side interaction
 - developers looking to leverage existing templates and layouts
 - developers looking for feature rich, opinionated frameworks or libraries
