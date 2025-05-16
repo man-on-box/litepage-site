@@ -87,18 +87,14 @@
 {{ define "hero" }}
 <div class="flex mx-auto my-5 gap-14 text-white items-center justify-center">
   <div class="shrink-0 py-20 hidden sm:block">
-    <img
-      src="/litepage.svg"
-      alt="Litepage logo"
-      class="w-40 h-40 lg:w-48 lg:h-48"
-    />
+    <img src="/litepage.svg" alt="Litepage logo" class="size-40 lg:size-48" />
   </div>
   <div class="py-24 sm:py-20 relative w-[42ch] lg:w-[45ch]">
     <div
       class="absolute -z-20 top-0 w-3/4 h-full rounded-full blur-3xl bg-linear-to-r from-pink to-cyan opacity-30 rotate-6"
     ></div>
     <h1
-      class="text-5xl sm:text-[2.7rem] lg:text-[3.2rem] text-center leading-tight lg:leading-tight sm:text-left font-semibold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-300"
+      class="text-6xl sm:text-[2.7rem] lg:text-[3.2rem] text-center leading-tight lg:leading-tight sm:text-left font-semibold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-300"
     >
       {{ .Heading }}
     </h1>
