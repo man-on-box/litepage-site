@@ -17,7 +17,6 @@ Litepage is for frontend developers who may have only built sites with frontend 
 - explore different paradigms when building sites
 - take a break from the fast paced frontend ecosystem
 - build something simple with low maintenance overhead
-- build their own pages, and not be restricted to any libraries or templates
 
 ## Backend developers
 
