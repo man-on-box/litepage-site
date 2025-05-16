@@ -3,6 +3,7 @@ package data
 type homepageView struct {
 	Title              string        `json:"title"`
 	Heading            string        `json:"heading"`
+	Subtext            string        `json:"subtext"`
 	Subheading         string        `json:"subheading"`
 	Ctas               []ctaItem     `json:"ctas"`
 	Taglines           []taglineItem `json:"taglines"`

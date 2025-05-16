@@ -17,7 +17,6 @@ Litepage is for frontend developers who may have only built sites with frontend 
 - explore different paradigms when building sites
 - take a break from the fast paced frontend ecosystem
 - build something simple with low maintenance overhead
-- build their own pages, and not be restricted to any libraries or templates
 
 ## Backend developers
 
@@ -33,5 +32,6 @@ And no matter what background you are coming from, Litepage is for **developers 
 ## Who Litepage is not for
 
 - non-developers looking to create sites without coding
+- developers building dynamic sites or sites with complex client side interaction
 - developers looking to leverage existing templates and layouts
-- developers looking for feature rich, opinionated static site builders
+- developers looking for feature rich, opinionated frameworks or libraries
