@@ -34,7 +34,7 @@
     {{ range .Data.Taglines }}
     <div data-fade-in>
       <div
-        class="group flex items-center gap-5 p-5 text-lg rounded-lg font-light border-2 border-pink border-dashed shadow-2xl shadow-pink/20 text-white hover:border-cyan hover:shadow-cyan/40 hover:border-solid transition"
+        class="h-full group flex items-center gap-5 p-5 text-lg rounded-lg font-light border-2 border-pink border-dashed shadow-2xl shadow-pink/20 text-white hover:border-cyan hover:shadow-cyan/40 hover:border-solid transition"
       >
         {{ inlineSVG .Icon "shrink-0" "w-auto" "h-10" "stroke-pink" "transition"
         "group-hover:stroke-cyan" "group-hover:-translate-y-1" }}
@@ -102,11 +102,11 @@
     >
       {{ .Heading }}
     </h1>
-    <h2
+    <p
       class="text-2xl mt-3 text-center sm:text-left font-semibold text-gray-300"
     >
       {{ .Subtext }}
-    </h2>
+    </p>
   </div>
 </div>
 {{ end }}
