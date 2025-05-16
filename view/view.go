@@ -1,6 +1,7 @@
 package view
 
 import (
+	"fmt"
 	"html/template"
 	"io"
 	"log"
@@ -41,7 +42,7 @@ func newView(pd *data.PageData, layout string, files ...string) *view {
 
 	tmpl := template.New("").Funcs(template.FuncMap{
 		"version": func() string {
-			return time.Now().Format("01021504")
+			return fmt.Sprintf("%d", time.Now().Unix())
 		},
 		"currentYear": func() string {
 			return strconv.Itoa(time.Now().Year())
