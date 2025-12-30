@@ -48,6 +48,9 @@ func newView(pd *data.PageData, layout string, files ...string) *view {
 			return strconv.Itoa(time.Now().Year())
 		},
 		"inlineSVG": inlineSVG,
+		"siteDomain": func() string {
+			return pd.SiteDomain
+		},
 	})
 
 	t, err := tmpl.ParseFiles(files...)

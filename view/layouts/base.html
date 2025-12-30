@@ -66,6 +66,17 @@
   />
   <meta name="apple-mobile-web-app-title" content="Litepage" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
+  <!-- metrics -->
+  <script>
+    if (window.location.host !== "{{siteDomain}}") {
+      window.goatcounter = { no_onload: true };
+    }
+  </script>
+  <script
+    defer
+    data-goatcounter="https://litepage.goatcounter.com/count"
+    src="https://gc.zgo.at/count.js"
+  ></script>
 </head>
 {{ end }}
 
