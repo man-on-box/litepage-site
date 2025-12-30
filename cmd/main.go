@@ -10,12 +10,13 @@ import (
 )
 
 func main() {
-	lp, err := litepage.New("litepage.dev")
+	domain := "litepage.dev"
+	lp, err := litepage.New(domain)
 	if err != nil {
 		log.Fatalf("Could not create litepage app: %v", err)
 	}
 
-	d := data.New()
+	d := data.New(domain)
 	vh := view.NewViewHandler(d.PageData)
 
 	lp.Page("/index.html", func(w io.Writer) {

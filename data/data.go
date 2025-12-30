@@ -16,13 +16,15 @@ type viewData struct {
 type PageData struct {
 	Links        Links
 	DocsSections []docsSection
+	SiteDomain   string
 }
 
-func New() *viewData {
+func New(siteDomain string) *viewData {
 	docs := parseDocs()
 	pd := &PageData{
 		Links:        getLinksView(),
 		DocsSections: docs.Sections,
+		SiteDomain:   siteDomain,
 	}
 	d := &viewData{
 		Homepage: getHomepageView(),
